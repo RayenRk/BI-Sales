@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>TP_ETL_GLSI_B</Name>
-    <LastWriteTime>2024-02-27T09:01:47.6543862Z</LastWriteTime>
+    <LastWriteTime>2024-03-05T09:27:45.0148043Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -13,7 +13,12 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>ChargementDW.dtsx</Name>
-      <LastWriteTime>2024-02-27T10:20:23.2905259Z</LastWriteTime>
+      <LastWriteTime>2024-03-05T10:00:58.5638367Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>ChargementDWFull.dtsx</Name>
+      <LastWriteTime>2024-03-05T09:24:06.7395056Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

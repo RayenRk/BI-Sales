@@ -6,8 +6,8 @@
   DTS:CreatorComputerName="DESKTOP-FOOVI2J"
   DTS:CreationDate="2/20/2024 10:25:43 AM"
   DTS:PackageType="5"
-  DTS:VersionBuild="15"
-  DTS:VersionGUID="{F6FADEBB-26A7-4C17-A9C9-65A59FE996B8}"
+  DTS:VersionBuild="23"
+  DTS:VersionGUID="{62274B92-EA7F-4ECD-BFCE-270F3479228F}"
   DTS:LastModifiedProductVersion="11.0.2100.60"
   DTS:LocaleID="1036"
   DTS:ObjectName="ChargementDW"
@@ -763,11 +763,11 @@ where [refTable].[CodePostal] = ?</property>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\flux_factTable"
+      DTS:refId="Package\flux_factTableVentes"
       DTS:ExecutableType="SSIS.Pipeline.3"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:LocaleID="-1"
-      DTS:ObjectName="flux_factTable"
+      DTS:ObjectName="flux_factTableVentes"
       DTS:DTSID="{605EC9A2-0B2F-4C8B-BC1A-69E782E68B93}"
       DTS:Description="Data Flow Task"
       DTS:CreationName="SSIS.Pipeline.3">
@@ -777,7 +777,7 @@ where [refTable].[CodePostal] = ?</property>
           version="1">
           <components>
             <component
-              refId="Package\flux_factTable\Data Conversion"
+              refId="Package\flux_factTableVentes\Data Conversion"
               name="Data Conversion"
               componentClassID="{62B1106C-7DB8-4EC8-ADD6-4C664DFFC54A}"
               description="Data Conversion"
@@ -785,29 +785,29 @@ where [refTable].[CodePostal] = ?</property>
               contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0">
               <inputs>
                 <input
-                  refId="Package\flux_factTable\Data Conversion.Inputs[Data Conversion Input]"
+                  refId="Package\flux_factTableVentes\Data Conversion.Inputs[Data Conversion Input]"
                   name="Data Conversion Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\flux_factTable\Data Conversion.Inputs[Data Conversion Input].Columns[SiteCode]"
-                      lineageId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].Columns[SiteCode]"
+                      refId="Package\flux_factTableVentes\Data Conversion.Inputs[Data Conversion Input].Columns[SiteCode]"
+                      lineageId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].Columns[SiteCode]"
                       cachedName="SiteCode"
                       cachedDataType="wstr"
                       cachedLength="4" />
                     <inputColumn
-                      refId="Package\flux_factTable\Data Conversion.Inputs[Data Conversion Input].Columns[Date]"
-                      lineageId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].Columns[Date]"
+                      refId="Package\flux_factTableVentes\Data Conversion.Inputs[Data Conversion Input].Columns[Date]"
+                      lineageId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].Columns[Date]"
                       cachedName="Date"
                       cachedDataType="dbTimeStamp" />
                     <inputColumn
-                      refId="Package\flux_factTable\Data Conversion.Inputs[Data Conversion Input].Columns[ProduitCode]"
-                      lineageId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].Columns[ProduitCode]"
+                      refId="Package\flux_factTableVentes\Data Conversion.Inputs[Data Conversion Input].Columns[ProduitCode]"
+                      lineageId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].Columns[ProduitCode]"
                       cachedName="ProduitCode"
                       cachedDataType="wstr"
                       cachedLength="255" />
                     <inputColumn
-                      refId="Package\flux_factTable\Data Conversion.Inputs[Data Conversion Input].Columns[ClientCode]"
-                      lineageId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].Columns[ClientCode]"
+                      refId="Package\flux_factTableVentes\Data Conversion.Inputs[Data Conversion Input].Columns[ClientCode]"
+                      lineageId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].Columns[ClientCode]"
                       cachedName="ClientCode"
                       cachedDataType="wstr"
                       cachedLength="255" />
@@ -817,15 +817,15 @@ where [refTable].[CodePostal] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\flux_factTable\Data Conversion.Outputs[Data Conversion Output]"
+                  refId="Package\flux_factTableVentes\Data Conversion.Outputs[Data Conversion Output]"
                   name="Data Conversion Output"
                   exclusionGroup="1"
-                  synchronousInputId="Package\flux_factTable\Data Conversion.Inputs[Data Conversion Input]">
+                  synchronousInputId="Package\flux_factTableVentes\Data Conversion.Inputs[Data Conversion Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\flux_factTable\Data Conversion.Outputs[Data Conversion Output].Columns[SiteCodeConverted]"
+                      refId="Package\flux_factTableVentes\Data Conversion.Outputs[Data Conversion Output].Columns[SiteCodeConverted]"
                       name="SiteCodeConverted"
-                      lineageId="Package\flux_factTable\Data Conversion.Outputs[Data Conversion Output].Columns[SiteCodeConverted]"
+                      lineageId="Package\flux_factTableVentes\Data Conversion.Outputs[Data Conversion Output].Columns[SiteCodeConverted]"
                       length="50"
                       dataType="str"
                       codePage="1252"
@@ -837,7 +837,7 @@ where [refTable].[CodePostal] = ?</property>
                           name="SourceInputColumnLineageID"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          containsID="true">#{Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].Columns[SiteCode]}</property>
+                          containsID="true">#{Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].Columns[SiteCode]}</property>
                         <property
                           name="FastParse"
                           dataType="System.Boolean"
@@ -845,9 +845,9 @@ where [refTable].[CodePostal] = ?</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\flux_factTable\Data Conversion.Outputs[Data Conversion Output].Columns[DateConverted]"
+                      refId="Package\flux_factTableVentes\Data Conversion.Outputs[Data Conversion Output].Columns[DateConverted]"
                       name="DateConverted"
-                      lineageId="Package\flux_factTable\Data Conversion.Outputs[Data Conversion Output].Columns[DateConverted]"
+                      lineageId="Package\flux_factTableVentes\Data Conversion.Outputs[Data Conversion Output].Columns[DateConverted]"
                       dataType="dbDate"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -857,7 +857,7 @@ where [refTable].[CodePostal] = ?</property>
                           name="SourceInputColumnLineageID"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          containsID="true">#{Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].Columns[Date]}</property>
+                          containsID="true">#{Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].Columns[Date]}</property>
                         <property
                           name="FastParse"
                           dataType="System.Boolean"
@@ -865,9 +865,9 @@ where [refTable].[CodePostal] = ?</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\flux_factTable\Data Conversion.Outputs[Data Conversion Output].Columns[ProduitCodeConverted]"
+                      refId="Package\flux_factTableVentes\Data Conversion.Outputs[Data Conversion Output].Columns[ProduitCodeConverted]"
                       name="ProduitCodeConverted"
-                      lineageId="Package\flux_factTable\Data Conversion.Outputs[Data Conversion Output].Columns[ProduitCodeConverted]"
+                      lineageId="Package\flux_factTableVentes\Data Conversion.Outputs[Data Conversion Output].Columns[ProduitCodeConverted]"
                       length="255"
                       dataType="str"
                       codePage="1252"
@@ -879,7 +879,7 @@ where [refTable].[CodePostal] = ?</property>
                           name="SourceInputColumnLineageID"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          containsID="true">#{Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].Columns[ProduitCode]}</property>
+                          containsID="true">#{Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].Columns[ProduitCode]}</property>
                         <property
                           name="FastParse"
                           dataType="System.Boolean"
@@ -887,9 +887,9 @@ where [refTable].[CodePostal] = ?</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\flux_factTable\Data Conversion.Outputs[Data Conversion Output].Columns[ClientCodeConverted]"
+                      refId="Package\flux_factTableVentes\Data Conversion.Outputs[Data Conversion Output].Columns[ClientCodeConverted]"
                       name="ClientCodeConverted"
-                      lineageId="Package\flux_factTable\Data Conversion.Outputs[Data Conversion Output].Columns[ClientCodeConverted]"
+                      lineageId="Package\flux_factTableVentes\Data Conversion.Outputs[Data Conversion Output].Columns[ClientCodeConverted]"
                       length="255"
                       dataType="str"
                       codePage="1252"
@@ -901,7 +901,7 @@ where [refTable].[CodePostal] = ?</property>
                           name="SourceInputColumnLineageID"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          containsID="true">#{Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].Columns[ClientCode]}</property>
+                          containsID="true">#{Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].Columns[ClientCode]}</property>
                         <property
                           name="FastParse"
                           dataType="System.Boolean"
@@ -912,22 +912,22 @@ where [refTable].[CodePostal] = ?</property>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\flux_factTable\Data Conversion.Outputs[Data Conversion Error Output]"
+                  refId="Package\flux_factTableVentes\Data Conversion.Outputs[Data Conversion Error Output]"
                   name="Data Conversion Error Output"
                   exclusionGroup="1"
-                  synchronousInputId="Package\flux_factTable\Data Conversion.Inputs[Data Conversion Input]"
+                  synchronousInputId="Package\flux_factTableVentes\Data Conversion.Inputs[Data Conversion Input]"
                   isErrorOut="true">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\flux_factTable\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      refId="Package\flux_factTableVentes\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
-                      lineageId="Package\flux_factTable\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      lineageId="Package\flux_factTableVentes\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
                       dataType="i4"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\flux_factTable\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      refId="Package\flux_factTableVentes\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
-                      lineageId="Package\flux_factTable\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\flux_factTableVentes\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       specialFlags="2" />
                   </outputColumns>
@@ -936,7 +936,7 @@ where [refTable].[CodePostal] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\flux_factTable\facture_sa"
+              refId="Package\flux_factTableVentes\facture_sa"
               name="facture_sa"
               componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
               description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
@@ -975,7 +975,7 @@ where [refTable].[CodePostal] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\flux_factTable\facture_sa.Connections[IDbConnection]"
+                  refId="Package\flux_factTableVentes\facture_sa.Connections[IDbConnection]"
                   name="IDbConnection"
                   description="Managed connection manager"
                   connectionManagerID="Package.ConnectionManagers[DESKTOP-FOOVI2J.ProjetVente_SA]"
@@ -983,275 +983,275 @@ where [refTable].[CodePostal] = ?</property>
               </connections>
               <outputs>
                 <output
-                  refId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output]"
+                  refId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output]"
                   name="ADO NET Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].Columns[PrixCatalogue]"
+                      refId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].Columns[PrixCatalogue]"
                       name="PrixCatalogue"
-                      lineageId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].Columns[PrixCatalogue]"
+                      lineageId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].Columns[PrixCatalogue]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[PrixCatalogue]" />
+                      externalMetadataColumnId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[PrixCatalogue]" />
                     <outputColumn
-                      refId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].Columns[Remise]"
+                      refId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].Columns[Remise]"
                       name="Remise"
-                      lineageId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].Columns[Remise]"
+                      lineageId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].Columns[Remise]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[Remise]" />
+                      externalMetadataColumnId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[Remise]" />
                     <outputColumn
-                      refId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].Columns[CA]"
+                      refId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].Columns[CA]"
                       name="CA"
-                      lineageId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].Columns[CA]"
+                      lineageId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].Columns[CA]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[CA]" />
+                      externalMetadataColumnId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[CA]" />
                     <outputColumn
-                      refId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].Columns[Marge]"
+                      refId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].Columns[Marge]"
                       name="Marge"
-                      lineageId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].Columns[Marge]"
+                      lineageId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].Columns[Marge]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[Marge]" />
+                      externalMetadataColumnId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[Marge]" />
                     <outputColumn
-                      refId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].Columns[CoutDirectMatiere]"
+                      refId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].Columns[CoutDirectMatiere]"
                       name="CoutDirectMatiere"
-                      lineageId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].Columns[CoutDirectMatiere]"
+                      lineageId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].Columns[CoutDirectMatiere]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[CoutDirectMatiere]" />
+                      externalMetadataColumnId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[CoutDirectMatiere]" />
                     <outputColumn
-                      refId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].Columns[CoutDirectMainOeuvre]"
+                      refId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].Columns[CoutDirectMainOeuvre]"
                       name="CoutDirectMainOeuvre"
-                      lineageId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].Columns[CoutDirectMainOeuvre]"
+                      lineageId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].Columns[CoutDirectMainOeuvre]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[CoutDirectMainOeuvre]" />
+                      externalMetadataColumnId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[CoutDirectMainOeuvre]" />
                     <outputColumn
-                      refId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].Columns[CoutIndirect]"
+                      refId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].Columns[CoutIndirect]"
                       name="CoutIndirect"
-                      lineageId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].Columns[CoutIndirect]"
+                      lineageId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].Columns[CoutIndirect]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[CoutIndirect]" />
+                      externalMetadataColumnId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[CoutIndirect]" />
                     <outputColumn
-                      refId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].Columns[Quantite]"
+                      refId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].Columns[Quantite]"
                       name="Quantite"
-                      lineageId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].Columns[Quantite]"
+                      lineageId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].Columns[Quantite]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[Quantite]" />
+                      externalMetadataColumnId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[Quantite]" />
                     <outputColumn
-                      refId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].Columns[NumFacture]"
+                      refId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].Columns[NumFacture]"
                       name="NumFacture"
-                      lineageId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].Columns[NumFacture]"
+                      lineageId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].Columns[NumFacture]"
                       length="255"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[NumFacture]" />
+                      externalMetadataColumnId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[NumFacture]" />
                     <outputColumn
-                      refId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].Columns[ProduitCode]"
+                      refId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].Columns[ProduitCode]"
                       name="ProduitCode"
-                      lineageId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].Columns[ProduitCode]"
+                      lineageId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].Columns[ProduitCode]"
                       length="255"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[ProduitCode]" />
+                      externalMetadataColumnId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[ProduitCode]" />
                     <outputColumn
-                      refId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].Columns[ClientCode]"
+                      refId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].Columns[ClientCode]"
                       name="ClientCode"
-                      lineageId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].Columns[ClientCode]"
+                      lineageId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].Columns[ClientCode]"
                       length="255"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[ClientCode]" />
+                      externalMetadataColumnId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[ClientCode]" />
                     <outputColumn
-                      refId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].Columns[Date]"
+                      refId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].Columns[Date]"
                       name="Date"
-                      lineageId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].Columns[Date]"
+                      lineageId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].Columns[Date]"
                       dataType="dbTimeStamp"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[Date]" />
+                      externalMetadataColumnId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[Date]" />
                     <outputColumn
-                      refId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].Columns[SiteCode]"
+                      refId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].Columns[SiteCode]"
                       name="SiteCode"
-                      lineageId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].Columns[SiteCode]"
+                      lineageId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].Columns[SiteCode]"
                       length="4"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[SiteCode]" />
+                      externalMetadataColumnId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[SiteCode]" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[PrixCatalogue]"
+                      refId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[PrixCatalogue]"
                       name="PrixCatalogue"
                       dataType="r8" />
                     <externalMetadataColumn
-                      refId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[Remise]"
+                      refId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[Remise]"
                       name="Remise"
                       dataType="r8" />
                     <externalMetadataColumn
-                      refId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[CA]"
+                      refId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[CA]"
                       name="CA"
                       dataType="r8" />
                     <externalMetadataColumn
-                      refId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[Marge]"
+                      refId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[Marge]"
                       name="Marge"
                       dataType="r8" />
                     <externalMetadataColumn
-                      refId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[CoutDirectMatiere]"
+                      refId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[CoutDirectMatiere]"
                       name="CoutDirectMatiere"
                       dataType="r8" />
                     <externalMetadataColumn
-                      refId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[CoutDirectMainOeuvre]"
+                      refId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[CoutDirectMainOeuvre]"
                       name="CoutDirectMainOeuvre"
                       dataType="r8" />
                     <externalMetadataColumn
-                      refId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[CoutIndirect]"
+                      refId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[CoutIndirect]"
                       name="CoutIndirect"
                       dataType="r8" />
                     <externalMetadataColumn
-                      refId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[Quantite]"
+                      refId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[Quantite]"
                       name="Quantite"
                       dataType="r8" />
                     <externalMetadataColumn
-                      refId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[NumFacture]"
+                      refId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[NumFacture]"
                       name="NumFacture"
                       dataType="wstr"
                       length="255" />
                     <externalMetadataColumn
-                      refId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[ProduitCode]"
+                      refId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[ProduitCode]"
                       name="ProduitCode"
                       dataType="wstr"
                       length="255" />
                     <externalMetadataColumn
-                      refId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[ClientCode]"
+                      refId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[ClientCode]"
                       name="ClientCode"
                       dataType="wstr"
                       length="255" />
                     <externalMetadataColumn
-                      refId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[Date]"
+                      refId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[Date]"
                       name="Date"
                       dataType="dbTimeStamp" />
                     <externalMetadataColumn
-                      refId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[SiteCode]"
+                      refId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[SiteCode]"
                       name="SiteCode"
                       dataType="wstr"
                       length="4" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Error Output]"
+                  refId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Error Output]"
                   name="ADO NET Source Error Output"
                   isErrorOut="true">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Error Output].Columns[PrixCatalogue]"
+                      refId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Error Output].Columns[PrixCatalogue]"
                       name="PrixCatalogue"
-                      lineageId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Error Output].Columns[PrixCatalogue]"
+                      lineageId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Error Output].Columns[PrixCatalogue]"
                       dataType="r8" />
                     <outputColumn
-                      refId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Error Output].Columns[Remise]"
+                      refId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Error Output].Columns[Remise]"
                       name="Remise"
-                      lineageId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Error Output].Columns[Remise]"
+                      lineageId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Error Output].Columns[Remise]"
                       dataType="r8" />
                     <outputColumn
-                      refId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Error Output].Columns[CA]"
+                      refId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Error Output].Columns[CA]"
                       name="CA"
-                      lineageId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Error Output].Columns[CA]"
+                      lineageId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Error Output].Columns[CA]"
                       dataType="r8" />
                     <outputColumn
-                      refId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Error Output].Columns[Marge]"
+                      refId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Error Output].Columns[Marge]"
                       name="Marge"
-                      lineageId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Error Output].Columns[Marge]"
+                      lineageId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Error Output].Columns[Marge]"
                       dataType="r8" />
                     <outputColumn
-                      refId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Error Output].Columns[CoutDirectMatiere]"
+                      refId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Error Output].Columns[CoutDirectMatiere]"
                       name="CoutDirectMatiere"
-                      lineageId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Error Output].Columns[CoutDirectMatiere]"
+                      lineageId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Error Output].Columns[CoutDirectMatiere]"
                       dataType="r8" />
                     <outputColumn
-                      refId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Error Output].Columns[CoutDirectMainOeuvre]"
+                      refId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Error Output].Columns[CoutDirectMainOeuvre]"
                       name="CoutDirectMainOeuvre"
-                      lineageId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Error Output].Columns[CoutDirectMainOeuvre]"
+                      lineageId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Error Output].Columns[CoutDirectMainOeuvre]"
                       dataType="r8" />
                     <outputColumn
-                      refId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Error Output].Columns[CoutIndirect]"
+                      refId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Error Output].Columns[CoutIndirect]"
                       name="CoutIndirect"
-                      lineageId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Error Output].Columns[CoutIndirect]"
+                      lineageId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Error Output].Columns[CoutIndirect]"
                       dataType="r8" />
                     <outputColumn
-                      refId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Error Output].Columns[Quantite]"
+                      refId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Error Output].Columns[Quantite]"
                       name="Quantite"
-                      lineageId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Error Output].Columns[Quantite]"
+                      lineageId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Error Output].Columns[Quantite]"
                       dataType="r8" />
                     <outputColumn
-                      refId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Error Output].Columns[NumFacture]"
+                      refId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Error Output].Columns[NumFacture]"
                       name="NumFacture"
-                      lineageId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Error Output].Columns[NumFacture]"
+                      lineageId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Error Output].Columns[NumFacture]"
                       length="255"
                       dataType="wstr" />
                     <outputColumn
-                      refId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Error Output].Columns[ProduitCode]"
+                      refId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Error Output].Columns[ProduitCode]"
                       name="ProduitCode"
-                      lineageId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Error Output].Columns[ProduitCode]"
+                      lineageId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Error Output].Columns[ProduitCode]"
                       length="255"
                       dataType="wstr" />
                     <outputColumn
-                      refId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Error Output].Columns[ClientCode]"
+                      refId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Error Output].Columns[ClientCode]"
                       name="ClientCode"
-                      lineageId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Error Output].Columns[ClientCode]"
+                      lineageId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Error Output].Columns[ClientCode]"
                       length="255"
                       dataType="wstr" />
                     <outputColumn
-                      refId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Error Output].Columns[Date]"
+                      refId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Error Output].Columns[Date]"
                       name="Date"
-                      lineageId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Error Output].Columns[Date]"
+                      lineageId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Error Output].Columns[Date]"
                       dataType="dbTimeStamp" />
                     <outputColumn
-                      refId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Error Output].Columns[SiteCode]"
+                      refId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Error Output].Columns[SiteCode]"
                       name="SiteCode"
-                      lineageId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Error Output].Columns[SiteCode]"
+                      lineageId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Error Output].Columns[SiteCode]"
                       length="4"
                       dataType="wstr" />
                     <outputColumn
-                      refId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      refId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
-                      lineageId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
-                      lineageId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       specialFlags="2" />
                   </outputColumns>
@@ -1260,7 +1260,7 @@ where [refTable].[CodePostal] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\flux_factTable\faitsVentes"
+              refId="Package\flux_factTableVentes\faitsVentes"
               name="faitsVentes"
               componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
               description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
@@ -1295,7 +1295,7 @@ where [refTable].[CodePostal] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\flux_factTable\faitsVentes.Connections[IDbConnection]"
+                  refId="Package\flux_factTableVentes\faitsVentes.Connections[IDbConnection]"
                   name="IDbConnection"
                   description="Managed connection manager"
                   connectionManagerID="Package.ConnectionManagers[DESKTOP-FOOVI2J.DW_VENTES]"
@@ -1303,143 +1303,143 @@ where [refTable].[CodePostal] = ?</property>
               </connections>
               <inputs>
                 <input
-                  refId="Package\flux_factTable\faitsVentes.Inputs[ADO NET Destination Input]"
+                  refId="Package\flux_factTableVentes\faitsVentes.Inputs[ADO NET Destination Input]"
                   name="ADO NET Destination Input"
                   hasSideEffects="true"
                   errorRowDisposition="FailComponent">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\flux_factTable\faitsVentes.Inputs[ADO NET Destination Input].Columns[Remise]"
-                      lineageId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].Columns[Remise]"
-                      externalMetadataColumnId="Package\flux_factTable\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[Remise]"
+                      refId="Package\flux_factTableVentes\faitsVentes.Inputs[ADO NET Destination Input].Columns[Remise]"
+                      lineageId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].Columns[Remise]"
+                      externalMetadataColumnId="Package\flux_factTableVentes\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[Remise]"
                       cachedName="Remise"
                       cachedDataType="r8" />
                     <inputColumn
-                      refId="Package\flux_factTable\faitsVentes.Inputs[ADO NET Destination Input].Columns[CA]"
-                      lineageId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].Columns[CA]"
-                      externalMetadataColumnId="Package\flux_factTable\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[CA]"
+                      refId="Package\flux_factTableVentes\faitsVentes.Inputs[ADO NET Destination Input].Columns[CA]"
+                      lineageId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].Columns[CA]"
+                      externalMetadataColumnId="Package\flux_factTableVentes\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[CA]"
                       cachedName="CA"
                       cachedDataType="r8" />
                     <inputColumn
-                      refId="Package\flux_factTable\faitsVentes.Inputs[ADO NET Destination Input].Columns[Marge]"
-                      lineageId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].Columns[Marge]"
-                      externalMetadataColumnId="Package\flux_factTable\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[Marge]"
+                      refId="Package\flux_factTableVentes\faitsVentes.Inputs[ADO NET Destination Input].Columns[Marge]"
+                      lineageId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].Columns[Marge]"
+                      externalMetadataColumnId="Package\flux_factTableVentes\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[Marge]"
                       cachedName="Marge"
                       cachedDataType="r8" />
                     <inputColumn
-                      refId="Package\flux_factTable\faitsVentes.Inputs[ADO NET Destination Input].Columns[CoutDirectMatiere]"
-                      lineageId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].Columns[CoutDirectMatiere]"
-                      externalMetadataColumnId="Package\flux_factTable\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[CoutDirectMatiere]"
+                      refId="Package\flux_factTableVentes\faitsVentes.Inputs[ADO NET Destination Input].Columns[CoutDirectMatiere]"
+                      lineageId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].Columns[CoutDirectMatiere]"
+                      externalMetadataColumnId="Package\flux_factTableVentes\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[CoutDirectMatiere]"
                       cachedName="CoutDirectMatiere"
                       cachedDataType="r8" />
                     <inputColumn
-                      refId="Package\flux_factTable\faitsVentes.Inputs[ADO NET Destination Input].Columns[CoutDirectMainOeuvre]"
-                      lineageId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].Columns[CoutDirectMainOeuvre]"
-                      externalMetadataColumnId="Package\flux_factTable\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[CoutDirectMainOeuvre]"
+                      refId="Package\flux_factTableVentes\faitsVentes.Inputs[ADO NET Destination Input].Columns[CoutDirectMainOeuvre]"
+                      lineageId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].Columns[CoutDirectMainOeuvre]"
+                      externalMetadataColumnId="Package\flux_factTableVentes\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[CoutDirectMainOeuvre]"
                       cachedName="CoutDirectMainOeuvre"
                       cachedDataType="r8" />
                     <inputColumn
-                      refId="Package\flux_factTable\faitsVentes.Inputs[ADO NET Destination Input].Columns[CoutIndirect]"
-                      lineageId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].Columns[CoutIndirect]"
-                      externalMetadataColumnId="Package\flux_factTable\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[CoutIndirect]"
+                      refId="Package\flux_factTableVentes\faitsVentes.Inputs[ADO NET Destination Input].Columns[CoutIndirect]"
+                      lineageId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].Columns[CoutIndirect]"
+                      externalMetadataColumnId="Package\flux_factTableVentes\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[CoutIndirect]"
                       cachedName="CoutIndirect"
                       cachedDataType="r8" />
                     <inputColumn
-                      refId="Package\flux_factTable\faitsVentes.Inputs[ADO NET Destination Input].Columns[Quantite]"
-                      lineageId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].Columns[Quantite]"
-                      externalMetadataColumnId="Package\flux_factTable\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[Quantite]"
+                      refId="Package\flux_factTableVentes\faitsVentes.Inputs[ADO NET Destination Input].Columns[Quantite]"
+                      lineageId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].Columns[Quantite]"
+                      externalMetadataColumnId="Package\flux_factTableVentes\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[Quantite]"
                       cachedName="Quantite"
                       cachedDataType="r8" />
                     <inputColumn
-                      refId="Package\flux_factTable\faitsVentes.Inputs[ADO NET Destination Input].Columns[NumFacture]"
-                      lineageId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].Columns[NumFacture]"
-                      externalMetadataColumnId="Package\flux_factTable\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[NumFacture]"
+                      refId="Package\flux_factTableVentes\faitsVentes.Inputs[ADO NET Destination Input].Columns[NumFacture]"
+                      lineageId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].Columns[NumFacture]"
+                      externalMetadataColumnId="Package\flux_factTableVentes\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[NumFacture]"
                       cachedName="NumFacture"
                       cachedDataType="wstr"
                       cachedLength="255" />
                     <inputColumn
-                      refId="Package\flux_factTable\faitsVentes.Inputs[ADO NET Destination Input].Columns[PrixCatalogue]"
-                      lineageId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output].Columns[PrixCatalogue]"
-                      externalMetadataColumnId="Package\flux_factTable\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[Prix_catalogue]"
+                      refId="Package\flux_factTableVentes\faitsVentes.Inputs[ADO NET Destination Input].Columns[PrixCatalogue]"
+                      lineageId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output].Columns[PrixCatalogue]"
+                      externalMetadataColumnId="Package\flux_factTableVentes\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[Prix_catalogue]"
                       cachedName="PrixCatalogue"
                       cachedDataType="r8" />
                     <inputColumn
-                      refId="Package\flux_factTable\faitsVentes.Inputs[ADO NET Destination Input].Columns[Produit_PK_Ref]"
-                      lineageId="Package\flux_factTable\recherche_id_produit.Outputs[Lookup Match Output].Columns[Produit_PK_Ref]"
-                      externalMetadataColumnId="Package\flux_factTable\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[Produit_FK]"
+                      refId="Package\flux_factTableVentes\faitsVentes.Inputs[ADO NET Destination Input].Columns[Produit_PK_Ref]"
+                      lineageId="Package\flux_factTableVentes\recherche_id_produit.Outputs[Lookup Match Output].Columns[Produit_PK_Ref]"
+                      externalMetadataColumnId="Package\flux_factTableVentes\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[Produit_FK]"
                       cachedName="Produit_PK_Ref"
                       cachedDataType="i4" />
                     <inputColumn
-                      refId="Package\flux_factTable\faitsVentes.Inputs[ADO NET Destination Input].Columns[Client_PK_Ref]"
-                      lineageId="Package\flux_factTable\rechereche_id_client.Outputs[Lookup Match Output].Columns[Client_PK_Ref]"
-                      externalMetadataColumnId="Package\flux_factTable\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[Client_FK]"
+                      refId="Package\flux_factTableVentes\faitsVentes.Inputs[ADO NET Destination Input].Columns[Client_PK_Ref]"
+                      lineageId="Package\flux_factTableVentes\rechereche_id_client.Outputs[Lookup Match Output].Columns[Client_PK_Ref]"
+                      externalMetadataColumnId="Package\flux_factTableVentes\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[Client_FK]"
                       cachedName="Client_PK_Ref"
                       cachedDataType="i4" />
                     <inputColumn
-                      refId="Package\flux_factTable\faitsVentes.Inputs[ADO NET Destination Input].Columns[Site_PK_Ref]"
-                      lineageId="Package\flux_factTable\recherche_id_site.Outputs[Lookup Match Output].Columns[Site_PK_Ref]"
-                      externalMetadataColumnId="Package\flux_factTable\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[Site_FK]"
+                      refId="Package\flux_factTableVentes\faitsVentes.Inputs[ADO NET Destination Input].Columns[Site_PK_Ref]"
+                      lineageId="Package\flux_factTableVentes\recherche_id_site.Outputs[Lookup Match Output].Columns[Site_PK_Ref]"
+                      externalMetadataColumnId="Package\flux_factTableVentes\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[Site_FK]"
                       cachedName="Site_PK_Ref"
                       cachedDataType="i4" />
                     <inputColumn
-                      refId="Package\flux_factTable\faitsVentes.Inputs[ADO NET Destination Input].Columns[Date_PK_Ref]"
-                      lineageId="Package\flux_factTable\recherche_id_date.Outputs[Lookup Match Output].Columns[Date_PK_Ref]"
-                      externalMetadataColumnId="Package\flux_factTable\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[DateFacturation_FK]"
+                      refId="Package\flux_factTableVentes\faitsVentes.Inputs[ADO NET Destination Input].Columns[Date_PK_Ref]"
+                      lineageId="Package\flux_factTableVentes\recherche_id_date.Outputs[Lookup Match Output].Columns[Date_PK_Ref]"
+                      externalMetadataColumnId="Package\flux_factTableVentes\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[DateFacturation_FK]"
                       cachedName="Date_PK_Ref"
                       cachedDataType="i4" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\flux_factTable\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[DateFacturation_FK]"
+                      refId="Package\flux_factTableVentes\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[DateFacturation_FK]"
                       name="DateFacturation_FK"
                       dataType="i4" />
                     <externalMetadataColumn
-                      refId="Package\flux_factTable\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[Site_FK]"
+                      refId="Package\flux_factTableVentes\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[Site_FK]"
                       name="Site_FK"
                       dataType="i4" />
                     <externalMetadataColumn
-                      refId="Package\flux_factTable\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[Produit_FK]"
+                      refId="Package\flux_factTableVentes\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[Produit_FK]"
                       name="Produit_FK"
                       dataType="i4" />
                     <externalMetadataColumn
-                      refId="Package\flux_factTable\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[Client_FK]"
+                      refId="Package\flux_factTableVentes\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[Client_FK]"
                       name="Client_FK"
                       dataType="i4" />
                     <externalMetadataColumn
-                      refId="Package\flux_factTable\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[Prix_catalogue]"
+                      refId="Package\flux_factTableVentes\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[Prix_catalogue]"
                       name="Prix_catalogue"
                       dataType="r8" />
                     <externalMetadataColumn
-                      refId="Package\flux_factTable\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[Remise]"
+                      refId="Package\flux_factTableVentes\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[Remise]"
                       name="Remise"
                       dataType="r8" />
                     <externalMetadataColumn
-                      refId="Package\flux_factTable\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[CA]"
+                      refId="Package\flux_factTableVentes\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[CA]"
                       name="CA"
                       dataType="r8" />
                     <externalMetadataColumn
-                      refId="Package\flux_factTable\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[Marge]"
+                      refId="Package\flux_factTableVentes\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[Marge]"
                       name="Marge"
                       dataType="r8" />
                     <externalMetadataColumn
-                      refId="Package\flux_factTable\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[CoutDirectMatiere]"
+                      refId="Package\flux_factTableVentes\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[CoutDirectMatiere]"
                       name="CoutDirectMatiere"
                       dataType="r8" />
                     <externalMetadataColumn
-                      refId="Package\flux_factTable\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[CoutDirectMainOeuvre]"
+                      refId="Package\flux_factTableVentes\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[CoutDirectMainOeuvre]"
                       name="CoutDirectMainOeuvre"
                       dataType="r8" />
                     <externalMetadataColumn
-                      refId="Package\flux_factTable\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[CoutIndirect]"
+                      refId="Package\flux_factTableVentes\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[CoutIndirect]"
                       name="CoutIndirect"
                       dataType="r8" />
                     <externalMetadataColumn
-                      refId="Package\flux_factTable\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[Quantite]"
+                      refId="Package\flux_factTableVentes\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[Quantite]"
                       name="Quantite"
                       dataType="r8" />
                     <externalMetadataColumn
-                      refId="Package\flux_factTable\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[NumFacture]"
+                      refId="Package\flux_factTableVentes\faitsVentes.Inputs[ADO NET Destination Input].ExternalColumns[NumFacture]"
                       name="NumFacture"
                       dataType="wstr"
                       length="50" />
@@ -1448,22 +1448,22 @@ where [refTable].[CodePostal] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\flux_factTable\faitsVentes.Outputs[ADO NET Destination Error Output]"
+                  refId="Package\flux_factTableVentes\faitsVentes.Outputs[ADO NET Destination Error Output]"
                   name="ADO NET Destination Error Output"
                   exclusionGroup="1"
-                  synchronousInputId="Package\flux_factTable\faitsVentes.Inputs[ADO NET Destination Input]"
+                  synchronousInputId="Package\flux_factTableVentes\faitsVentes.Inputs[ADO NET Destination Input]"
                   isErrorOut="true">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\flux_factTable\faitsVentes.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\flux_factTableVentes\faitsVentes.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
-                      lineageId="Package\flux_factTable\faitsVentes.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\flux_factTableVentes\faitsVentes.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\flux_factTable\faitsVentes.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\flux_factTableVentes\faitsVentes.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
-                      lineageId="Package\flux_factTable\faitsVentes.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\flux_factTableVentes\faitsVentes.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       specialFlags="2" />
                   </outputColumns>
@@ -1472,7 +1472,7 @@ where [refTable].[CodePostal] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\flux_factTable\recherche_id_date"
+              refId="Package\flux_factTableVentes\recherche_id_date"
               name="recherche_id_date"
               componentClassID="{671046B0-AA63-4C9F-90E4-C06E0B710CE3}"
               description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
@@ -1528,7 +1528,7 @@ where [refTable].[Date] = ?</property>
                   name="ParameterMap"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  containsID="true">#{Package\flux_factTable\Data Conversion.Outputs[Data Conversion Output].Columns[DateConverted]};</property>
+                  containsID="true">#{Package\flux_factTableVentes\Data Conversion.Outputs[Data Conversion Output].Columns[DateConverted]};</property>
                 <property
                   name="DefaultCodePage"
                   dataType="System.Int32"
@@ -1540,7 +1540,7 @@ where [refTable].[Date] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\flux_factTable\recherche_id_date.Connections[OleDbConnection]"
+                  refId="Package\flux_factTableVentes\recherche_id_date.Connections[OleDbConnection]"
                   name="OleDbConnection"
                   description="Connection manager used to access lookup data."
                   connectionManagerID="Package.ConnectionManagers[DESKTOP-FOOVI2J.DW_VENTES1]"
@@ -1548,12 +1548,12 @@ where [refTable].[Date] = ?</property>
               </connections>
               <inputs>
                 <input
-                  refId="Package\flux_factTable\recherche_id_date.Inputs[Lookup Input]"
+                  refId="Package\flux_factTableVentes\recherche_id_date.Inputs[Lookup Input]"
                   name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\flux_factTable\recherche_id_date.Inputs[Lookup Input].Columns[DateConverted]"
-                      lineageId="Package\flux_factTable\Data Conversion.Outputs[Data Conversion Output].Columns[DateConverted]"
+                      refId="Package\flux_factTableVentes\recherche_id_date.Inputs[Lookup Input].Columns[DateConverted]"
+                      lineageId="Package\flux_factTableVentes\Data Conversion.Outputs[Data Conversion Output].Columns[DateConverted]"
                       cachedName="DateConverted"
                       cachedDataType="dbDate">
                       <properties>
@@ -1573,17 +1573,17 @@ where [refTable].[Date] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\flux_factTable\recherche_id_date.Outputs[Lookup Match Output]"
+                  refId="Package\flux_factTableVentes\recherche_id_date.Outputs[Lookup Match Output]"
                   name="Lookup Match Output"
                   exclusionGroup="1"
-                  synchronousInputId="Package\flux_factTable\recherche_id_date.Inputs[Lookup Input]"
+                  synchronousInputId="Package\flux_factTableVentes\recherche_id_date.Inputs[Lookup Input]"
                   errorOrTruncationOperation="Lookup"
                   errorRowDisposition="FailComponent">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\flux_factTable\recherche_id_date.Outputs[Lookup Match Output].Columns[Date_PK_Ref]"
+                      refId="Package\flux_factTableVentes\recherche_id_date.Outputs[Lookup Match Output].Columns[Date_PK_Ref]"
                       name="Date_PK_Ref"
-                      lineageId="Package\flux_factTable\recherche_id_date.Outputs[Lookup Match Output].Columns[Date_PK_Ref]"
+                      lineageId="Package\flux_factTableVentes\recherche_id_date.Outputs[Lookup Match Output].Columns[Date_PK_Ref]"
                       dataType="i4"
                       errorOrTruncationOperation="Copy Column"
                       truncationRowDisposition="FailComponent">
@@ -1598,30 +1598,30 @@ where [refTable].[Date] = ?</property>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\flux_factTable\recherche_id_date.Outputs[Lookup No Match Output]"
+                  refId="Package\flux_factTableVentes\recherche_id_date.Outputs[Lookup No Match Output]"
                   name="Lookup No Match Output"
                   description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
                   exclusionGroup="1"
-                  synchronousInputId="Package\flux_factTable\recherche_id_date.Inputs[Lookup Input]">
+                  synchronousInputId="Package\flux_factTableVentes\recherche_id_date.Inputs[Lookup Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\flux_factTable\recherche_id_date.Outputs[Lookup Error Output]"
+                  refId="Package\flux_factTableVentes\recherche_id_date.Outputs[Lookup Error Output]"
                   name="Lookup Error Output"
                   exclusionGroup="1"
-                  synchronousInputId="Package\flux_factTable\recherche_id_date.Inputs[Lookup Input]"
+                  synchronousInputId="Package\flux_factTableVentes\recherche_id_date.Inputs[Lookup Input]"
                   isErrorOut="true">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\flux_factTable\recherche_id_date.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      refId="Package\flux_factTableVentes\recherche_id_date.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
-                      lineageId="Package\flux_factTable\recherche_id_date.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      lineageId="Package\flux_factTableVentes\recherche_id_date.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       dataType="i4"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\flux_factTable\recherche_id_date.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      refId="Package\flux_factTableVentes\recherche_id_date.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
-                      lineageId="Package\flux_factTable\recherche_id_date.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\flux_factTableVentes\recherche_id_date.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       specialFlags="2" />
                   </outputColumns>
@@ -1630,7 +1630,7 @@ where [refTable].[Date] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\flux_factTable\recherche_id_produit"
+              refId="Package\flux_factTableVentes\recherche_id_produit"
               name="recherche_id_produit"
               componentClassID="{671046B0-AA63-4C9F-90E4-C06E0B710CE3}"
               description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
@@ -1686,7 +1686,7 @@ where [refTable].[ProduitCode] = ?</property>
                   name="ParameterMap"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  containsID="true">#{Package\flux_factTable\Data Conversion.Outputs[Data Conversion Output].Columns[ProduitCodeConverted]};</property>
+                  containsID="true">#{Package\flux_factTableVentes\Data Conversion.Outputs[Data Conversion Output].Columns[ProduitCodeConverted]};</property>
                 <property
                   name="DefaultCodePage"
                   dataType="System.Int32"
@@ -1698,7 +1698,7 @@ where [refTable].[ProduitCode] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\flux_factTable\recherche_id_produit.Connections[OleDbConnection]"
+                  refId="Package\flux_factTableVentes\recherche_id_produit.Connections[OleDbConnection]"
                   name="OleDbConnection"
                   description="Connection manager used to access lookup data."
                   connectionManagerID="Package.ConnectionManagers[DESKTOP-FOOVI2J.DW_VENTES1]"
@@ -1706,12 +1706,12 @@ where [refTable].[ProduitCode] = ?</property>
               </connections>
               <inputs>
                 <input
-                  refId="Package\flux_factTable\recherche_id_produit.Inputs[Lookup Input]"
+                  refId="Package\flux_factTableVentes\recherche_id_produit.Inputs[Lookup Input]"
                   name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\flux_factTable\recherche_id_produit.Inputs[Lookup Input].Columns[ProduitCodeConverted]"
-                      lineageId="Package\flux_factTable\Data Conversion.Outputs[Data Conversion Output].Columns[ProduitCodeConverted]"
+                      refId="Package\flux_factTableVentes\recherche_id_produit.Inputs[Lookup Input].Columns[ProduitCodeConverted]"
+                      lineageId="Package\flux_factTableVentes\Data Conversion.Outputs[Data Conversion Output].Columns[ProduitCodeConverted]"
                       cachedName="ProduitCodeConverted"
                       cachedDataType="str"
                       cachedLength="255"
@@ -1733,17 +1733,17 @@ where [refTable].[ProduitCode] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\flux_factTable\recherche_id_produit.Outputs[Lookup Match Output]"
+                  refId="Package\flux_factTableVentes\recherche_id_produit.Outputs[Lookup Match Output]"
                   name="Lookup Match Output"
                   exclusionGroup="1"
-                  synchronousInputId="Package\flux_factTable\recherche_id_produit.Inputs[Lookup Input]"
+                  synchronousInputId="Package\flux_factTableVentes\recherche_id_produit.Inputs[Lookup Input]"
                   errorOrTruncationOperation="Lookup"
                   errorRowDisposition="FailComponent">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\flux_factTable\recherche_id_produit.Outputs[Lookup Match Output].Columns[Produit_PK_Ref]"
+                      refId="Package\flux_factTableVentes\recherche_id_produit.Outputs[Lookup Match Output].Columns[Produit_PK_Ref]"
                       name="Produit_PK_Ref"
-                      lineageId="Package\flux_factTable\recherche_id_produit.Outputs[Lookup Match Output].Columns[Produit_PK_Ref]"
+                      lineageId="Package\flux_factTableVentes\recherche_id_produit.Outputs[Lookup Match Output].Columns[Produit_PK_Ref]"
                       dataType="i4"
                       errorOrTruncationOperation="Copy Column"
                       truncationRowDisposition="FailComponent">
@@ -1758,30 +1758,30 @@ where [refTable].[ProduitCode] = ?</property>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\flux_factTable\recherche_id_produit.Outputs[Lookup No Match Output]"
+                  refId="Package\flux_factTableVentes\recherche_id_produit.Outputs[Lookup No Match Output]"
                   name="Lookup No Match Output"
                   description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
                   exclusionGroup="1"
-                  synchronousInputId="Package\flux_factTable\recherche_id_produit.Inputs[Lookup Input]">
+                  synchronousInputId="Package\flux_factTableVentes\recherche_id_produit.Inputs[Lookup Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\flux_factTable\recherche_id_produit.Outputs[Lookup Error Output]"
+                  refId="Package\flux_factTableVentes\recherche_id_produit.Outputs[Lookup Error Output]"
                   name="Lookup Error Output"
                   exclusionGroup="1"
-                  synchronousInputId="Package\flux_factTable\recherche_id_produit.Inputs[Lookup Input]"
+                  synchronousInputId="Package\flux_factTableVentes\recherche_id_produit.Inputs[Lookup Input]"
                   isErrorOut="true">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\flux_factTable\recherche_id_produit.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      refId="Package\flux_factTableVentes\recherche_id_produit.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
-                      lineageId="Package\flux_factTable\recherche_id_produit.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      lineageId="Package\flux_factTableVentes\recherche_id_produit.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       dataType="i4"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\flux_factTable\recherche_id_produit.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      refId="Package\flux_factTableVentes\recherche_id_produit.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
-                      lineageId="Package\flux_factTable\recherche_id_produit.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\flux_factTableVentes\recherche_id_produit.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       specialFlags="2" />
                   </outputColumns>
@@ -1790,7 +1790,7 @@ where [refTable].[ProduitCode] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\flux_factTable\recherche_id_site"
+              refId="Package\flux_factTableVentes\recherche_id_site"
               name="recherche_id_site"
               componentClassID="{671046B0-AA63-4C9F-90E4-C06E0B710CE3}"
               description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
@@ -1846,7 +1846,7 @@ where [refTable].[SiteCode] = ?</property>
                   name="ParameterMap"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  containsID="true">#{Package\flux_factTable\Data Conversion.Outputs[Data Conversion Output].Columns[SiteCodeConverted]};</property>
+                  containsID="true">#{Package\flux_factTableVentes\Data Conversion.Outputs[Data Conversion Output].Columns[SiteCodeConverted]};</property>
                 <property
                   name="DefaultCodePage"
                   dataType="System.Int32"
@@ -1858,7 +1858,7 @@ where [refTable].[SiteCode] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\flux_factTable\recherche_id_site.Connections[OleDbConnection]"
+                  refId="Package\flux_factTableVentes\recherche_id_site.Connections[OleDbConnection]"
                   name="OleDbConnection"
                   description="Connection manager used to access lookup data."
                   connectionManagerID="Package.ConnectionManagers[DESKTOP-FOOVI2J.DW_VENTES1]"
@@ -1866,12 +1866,12 @@ where [refTable].[SiteCode] = ?</property>
               </connections>
               <inputs>
                 <input
-                  refId="Package\flux_factTable\recherche_id_site.Inputs[Lookup Input]"
+                  refId="Package\flux_factTableVentes\recherche_id_site.Inputs[Lookup Input]"
                   name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\flux_factTable\recherche_id_site.Inputs[Lookup Input].Columns[SiteCodeConverted]"
-                      lineageId="Package\flux_factTable\Data Conversion.Outputs[Data Conversion Output].Columns[SiteCodeConverted]"
+                      refId="Package\flux_factTableVentes\recherche_id_site.Inputs[Lookup Input].Columns[SiteCodeConverted]"
+                      lineageId="Package\flux_factTableVentes\Data Conversion.Outputs[Data Conversion Output].Columns[SiteCodeConverted]"
                       cachedName="SiteCodeConverted"
                       cachedDataType="str"
                       cachedLength="50"
@@ -1893,17 +1893,17 @@ where [refTable].[SiteCode] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\flux_factTable\recherche_id_site.Outputs[Lookup Match Output]"
+                  refId="Package\flux_factTableVentes\recherche_id_site.Outputs[Lookup Match Output]"
                   name="Lookup Match Output"
                   exclusionGroup="1"
-                  synchronousInputId="Package\flux_factTable\recherche_id_site.Inputs[Lookup Input]"
+                  synchronousInputId="Package\flux_factTableVentes\recherche_id_site.Inputs[Lookup Input]"
                   errorOrTruncationOperation="Lookup"
                   errorRowDisposition="FailComponent">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\flux_factTable\recherche_id_site.Outputs[Lookup Match Output].Columns[Site_PK_Ref]"
+                      refId="Package\flux_factTableVentes\recherche_id_site.Outputs[Lookup Match Output].Columns[Site_PK_Ref]"
                       name="Site_PK_Ref"
-                      lineageId="Package\flux_factTable\recherche_id_site.Outputs[Lookup Match Output].Columns[Site_PK_Ref]"
+                      lineageId="Package\flux_factTableVentes\recherche_id_site.Outputs[Lookup Match Output].Columns[Site_PK_Ref]"
                       dataType="i4"
                       errorOrTruncationOperation="Copy Column"
                       truncationRowDisposition="FailComponent">
@@ -1918,30 +1918,30 @@ where [refTable].[SiteCode] = ?</property>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\flux_factTable\recherche_id_site.Outputs[Lookup No Match Output]"
+                  refId="Package\flux_factTableVentes\recherche_id_site.Outputs[Lookup No Match Output]"
                   name="Lookup No Match Output"
                   description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
                   exclusionGroup="1"
-                  synchronousInputId="Package\flux_factTable\recherche_id_site.Inputs[Lookup Input]">
+                  synchronousInputId="Package\flux_factTableVentes\recherche_id_site.Inputs[Lookup Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\flux_factTable\recherche_id_site.Outputs[Lookup Error Output]"
+                  refId="Package\flux_factTableVentes\recherche_id_site.Outputs[Lookup Error Output]"
                   name="Lookup Error Output"
                   exclusionGroup="1"
-                  synchronousInputId="Package\flux_factTable\recherche_id_site.Inputs[Lookup Input]"
+                  synchronousInputId="Package\flux_factTableVentes\recherche_id_site.Inputs[Lookup Input]"
                   isErrorOut="true">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\flux_factTable\recherche_id_site.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      refId="Package\flux_factTableVentes\recherche_id_site.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
-                      lineageId="Package\flux_factTable\recherche_id_site.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      lineageId="Package\flux_factTableVentes\recherche_id_site.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       dataType="i4"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\flux_factTable\recherche_id_site.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      refId="Package\flux_factTableVentes\recherche_id_site.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
-                      lineageId="Package\flux_factTable\recherche_id_site.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\flux_factTableVentes\recherche_id_site.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       specialFlags="2" />
                   </outputColumns>
@@ -1950,7 +1950,7 @@ where [refTable].[SiteCode] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\flux_factTable\rechereche_id_client"
+              refId="Package\flux_factTableVentes\rechereche_id_client"
               name="rechereche_id_client"
               componentClassID="{671046B0-AA63-4C9F-90E4-C06E0B710CE3}"
               description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
@@ -2006,7 +2006,7 @@ where [refTable].[ClientCode] = ?</property>
                   name="ParameterMap"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  containsID="true">#{Package\flux_factTable\Data Conversion.Outputs[Data Conversion Output].Columns[ClientCodeConverted]};</property>
+                  containsID="true">#{Package\flux_factTableVentes\Data Conversion.Outputs[Data Conversion Output].Columns[ClientCodeConverted]};</property>
                 <property
                   name="DefaultCodePage"
                   dataType="System.Int32"
@@ -2018,7 +2018,7 @@ where [refTable].[ClientCode] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\flux_factTable\rechereche_id_client.Connections[OleDbConnection]"
+                  refId="Package\flux_factTableVentes\rechereche_id_client.Connections[OleDbConnection]"
                   name="OleDbConnection"
                   description="Connection manager used to access lookup data."
                   connectionManagerID="Package.ConnectionManagers[DESKTOP-FOOVI2J.DW_VENTES1]"
@@ -2026,12 +2026,12 @@ where [refTable].[ClientCode] = ?</property>
               </connections>
               <inputs>
                 <input
-                  refId="Package\flux_factTable\rechereche_id_client.Inputs[Lookup Input]"
+                  refId="Package\flux_factTableVentes\rechereche_id_client.Inputs[Lookup Input]"
                   name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\flux_factTable\rechereche_id_client.Inputs[Lookup Input].Columns[ClientCodeConverted]"
-                      lineageId="Package\flux_factTable\Data Conversion.Outputs[Data Conversion Output].Columns[ClientCodeConverted]"
+                      refId="Package\flux_factTableVentes\rechereche_id_client.Inputs[Lookup Input].Columns[ClientCodeConverted]"
+                      lineageId="Package\flux_factTableVentes\Data Conversion.Outputs[Data Conversion Output].Columns[ClientCodeConverted]"
                       cachedName="ClientCodeConverted"
                       cachedDataType="str"
                       cachedLength="255"
@@ -2053,17 +2053,17 @@ where [refTable].[ClientCode] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\flux_factTable\rechereche_id_client.Outputs[Lookup Match Output]"
+                  refId="Package\flux_factTableVentes\rechereche_id_client.Outputs[Lookup Match Output]"
                   name="Lookup Match Output"
                   exclusionGroup="1"
-                  synchronousInputId="Package\flux_factTable\rechereche_id_client.Inputs[Lookup Input]"
+                  synchronousInputId="Package\flux_factTableVentes\rechereche_id_client.Inputs[Lookup Input]"
                   errorOrTruncationOperation="Lookup"
                   errorRowDisposition="FailComponent">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\flux_factTable\rechereche_id_client.Outputs[Lookup Match Output].Columns[Client_PK_Ref]"
+                      refId="Package\flux_factTableVentes\rechereche_id_client.Outputs[Lookup Match Output].Columns[Client_PK_Ref]"
                       name="Client_PK_Ref"
-                      lineageId="Package\flux_factTable\rechereche_id_client.Outputs[Lookup Match Output].Columns[Client_PK_Ref]"
+                      lineageId="Package\flux_factTableVentes\rechereche_id_client.Outputs[Lookup Match Output].Columns[Client_PK_Ref]"
                       dataType="i4"
                       errorOrTruncationOperation="Copy Column"
                       truncationRowDisposition="FailComponent">
@@ -2078,30 +2078,30 @@ where [refTable].[ClientCode] = ?</property>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\flux_factTable\rechereche_id_client.Outputs[Lookup No Match Output]"
+                  refId="Package\flux_factTableVentes\rechereche_id_client.Outputs[Lookup No Match Output]"
                   name="Lookup No Match Output"
                   description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
                   exclusionGroup="1"
-                  synchronousInputId="Package\flux_factTable\rechereche_id_client.Inputs[Lookup Input]">
+                  synchronousInputId="Package\flux_factTableVentes\rechereche_id_client.Inputs[Lookup Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\flux_factTable\rechereche_id_client.Outputs[Lookup Error Output]"
+                  refId="Package\flux_factTableVentes\rechereche_id_client.Outputs[Lookup Error Output]"
                   name="Lookup Error Output"
                   exclusionGroup="1"
-                  synchronousInputId="Package\flux_factTable\rechereche_id_client.Inputs[Lookup Input]"
+                  synchronousInputId="Package\flux_factTableVentes\rechereche_id_client.Inputs[Lookup Input]"
                   isErrorOut="true">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\flux_factTable\rechereche_id_client.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      refId="Package\flux_factTableVentes\rechereche_id_client.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
-                      lineageId="Package\flux_factTable\rechereche_id_client.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      lineageId="Package\flux_factTableVentes\rechereche_id_client.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       dataType="i4"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\flux_factTable\rechereche_id_client.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      refId="Package\flux_factTableVentes\rechereche_id_client.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
-                      lineageId="Package\flux_factTable\rechereche_id_client.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\flux_factTableVentes\rechereche_id_client.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       specialFlags="2" />
                   </outputColumns>
@@ -2112,35 +2112,35 @@ where [refTable].[ClientCode] = ?</property>
           </components>
           <paths>
             <path
-              refId="Package\flux_factTable.Paths[ADO NET Source Output]"
+              refId="Package\flux_factTableVentes.Paths[ADO NET Source Output]"
               name="ADO NET Source Output"
-              startId="Package\flux_factTable\facture_sa.Outputs[ADO NET Source Output]"
-              endId="Package\flux_factTable\Data Conversion.Inputs[Data Conversion Input]" />
+              startId="Package\flux_factTableVentes\facture_sa.Outputs[ADO NET Source Output]"
+              endId="Package\flux_factTableVentes\Data Conversion.Inputs[Data Conversion Input]" />
             <path
-              refId="Package\flux_factTable.Paths[Data Conversion Output]"
+              refId="Package\flux_factTableVentes.Paths[Data Conversion Output]"
               name="Data Conversion Output"
-              startId="Package\flux_factTable\Data Conversion.Outputs[Data Conversion Output]"
-              endId="Package\flux_factTable\recherche_id_produit.Inputs[Lookup Input]" />
+              startId="Package\flux_factTableVentes\Data Conversion.Outputs[Data Conversion Output]"
+              endId="Package\flux_factTableVentes\recherche_id_produit.Inputs[Lookup Input]" />
             <path
-              refId="Package\flux_factTable.Paths[Lookup Match Output2]"
+              refId="Package\flux_factTableVentes.Paths[Lookup Match Output2]"
               name="Lookup Match Output"
-              startId="Package\flux_factTable\recherche_id_produit.Outputs[Lookup Match Output]"
-              endId="Package\flux_factTable\rechereche_id_client.Inputs[Lookup Input]" />
+              startId="Package\flux_factTableVentes\recherche_id_site.Outputs[Lookup Match Output]"
+              endId="Package\flux_factTableVentes\recherche_id_date.Inputs[Lookup Input]" />
             <path
-              refId="Package\flux_factTable.Paths[Lookup Match Output3]"
+              refId="Package\flux_factTableVentes.Paths[Lookup Match Output3]"
               name="Lookup Match Output"
-              startId="Package\flux_factTable\rechereche_id_client.Outputs[Lookup Match Output]"
-              endId="Package\flux_factTable\recherche_id_site.Inputs[Lookup Input]" />
+              startId="Package\flux_factTableVentes\recherche_id_date.Outputs[Lookup Match Output]"
+              endId="Package\flux_factTableVentes\faitsVentes.Inputs[ADO NET Destination Input]" />
             <path
-              refId="Package\flux_factTable.Paths[Lookup Match Output]"
+              refId="Package\flux_factTableVentes.Paths[Lookup Match Output]"
               name="Lookup Match Output"
-              startId="Package\flux_factTable\recherche_id_site.Outputs[Lookup Match Output]"
-              endId="Package\flux_factTable\recherche_id_date.Inputs[Lookup Input]" />
+              startId="Package\flux_factTableVentes\recherche_id_produit.Outputs[Lookup Match Output]"
+              endId="Package\flux_factTableVentes\rechereche_id_client.Inputs[Lookup Input]" />
             <path
-              refId="Package\flux_factTable.Paths[Lookup Match Output1]"
+              refId="Package\flux_factTableVentes.Paths[Lookup Match Output1]"
               name="Lookup Match Output"
-              startId="Package\flux_factTable\recherche_id_date.Outputs[Lookup Match Output]"
-              endId="Package\flux_factTable\faitsVentes.Inputs[ADO NET Destination Input]" />
+              startId="Package\flux_factTableVentes\rechereche_id_client.Outputs[Lookup Match Output]"
+              endId="Package\flux_factTableVentes\recherche_id_site.Inputs[Lookup Input]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -3529,13 +3529,13 @@ where [refTable].[ClientCode] = ?</property>
             <path
               refId="Package\flux_geo.Paths[ADO NET Source Output1]"
               name="ADO NET Source Output"
-              startId="Package\flux_geo\adresses_clients.Outputs[ADO NET Source Output]"
-              endId="Package\flux_geo\Union All.Inputs[Union All Input 1]" />
+              startId="Package\flux_geo\adresses_sites.Outputs[ADO NET Source Output]"
+              endId="Package\flux_geo\Union All.Inputs[Union All Input 2]" />
             <path
               refId="Package\flux_geo.Paths[ADO NET Source Output]"
               name="ADO NET Source Output"
-              startId="Package\flux_geo\adresses_sites.Outputs[ADO NET Source Output]"
-              endId="Package\flux_geo\Union All.Inputs[Union All Input 2]" />
+              startId="Package\flux_geo\adresses_clients.Outputs[ADO NET Source Output]"
+              endId="Package\flux_geo\Union All.Inputs[Union All Input 1]" />
             <path
               refId="Package\flux_geo.Paths[Sort Output]"
               name="Sort Output"
@@ -3941,6 +3941,7 @@ where [refTable].[ClientCode] = ?</property>
       DTS:refId="Package\flux_produit_v2"
       DTS:ExecutableType="SSIS.Pipeline.3"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:Disabled="True"
       DTS:LocaleID="-1"
       DTS:ObjectName="flux_produit_v2"
       DTS:DTSID="{5E86DE39-58C9-427D-9942-45302AB7062F}"
@@ -4772,13 +4773,13 @@ where [refTable].[SousFamille_ID] = ?</property>
             <path
               refId="Package\flux_produit_v2.Paths[Lookup Match Output1]"
               name="Lookup Match Output"
-              startId="Package\flux_produit_v2\recherche_f.Outputs[Lookup Match Output]"
-              endId="Package\flux_produit_v2\DimProduit.Inputs[ADO NET Destination Input]" />
+              startId="Package\flux_produit_v2\recherche_sf.Outputs[Lookup Match Output]"
+              endId="Package\flux_produit_v2\recherche_f.Inputs[Lookup Input]" />
             <path
               refId="Package\flux_produit_v2.Paths[Lookup Match Output]"
               name="Lookup Match Output"
-              startId="Package\flux_produit_v2\recherche_sf.Outputs[Lookup Match Output]"
-              endId="Package\flux_produit_v2\recherche_f.Inputs[Lookup Input]" />
+              startId="Package\flux_produit_v2\recherche_f.Outputs[Lookup Match Output]"
+              endId="Package\flux_produit_v2\DimProduit.Inputs[ADO NET Destination Input]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -5420,7 +5421,174 @@ where [refTable].[CodePostal] = ?</property>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\vider_DimClient"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:ThreadHint="0"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="vider_DimClient"
+      DTS:DTSID="{6CF30E4C-3234-41D5-A388-74B0E218F5E9}"
+      DTS:Description="Execute SQL Task"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{9BF5D884-4FA7-40F7-B6FF-D3BBC19846E7}"
+          SQLTask:SqlStatementSource="delete from DimClient" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\vider_DimGeo"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:ThreadHint="0"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="vider_DimGeo"
+      DTS:DTSID="{471545FA-5C75-4A51-BBF7-6D40140010BE}"
+      DTS:Description="Execute SQL Task"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{9BF5D884-4FA7-40F7-B6FF-D3BBC19846E7}"
+          SQLTask:SqlStatementSource="delete from DimGeographie" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\vider_DimProduit"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:ThreadHint="0"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="vider_DimProduit"
+      DTS:DTSID="{22CF093C-B9E1-4BC2-B4DB-3D9FA80A0CEE}"
+      DTS:Description="Execute SQL Task"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{9BF5D884-4FA7-40F7-B6FF-D3BBC19846E7}"
+          SQLTask:SqlStatementSource="delete from DimProduit" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\vider_DimSite"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:ThreadHint="0"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="vider_DimSite"
+      DTS:DTSID="{42C32DD9-87B1-4C8A-BE46-736001809AED}"
+      DTS:Description="Execute SQL Task"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{9BF5D884-4FA7-40F7-B6FF-D3BBC19846E7}"
+          SQLTask:SqlStatementSource="delete from DimSite" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\vider_faitVente"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:ThreadHint="0"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="vider_faitVente"
+      DTS:DTSID="{D4E49DF5-BB67-4DDC-8EA2-79BF26F5CB7A}"
+      DTS:Description="Execute SQL Task"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{9BF5D884-4FA7-40F7-B6FF-D3BBC19846E7}"
+          SQLTask:SqlStatementSource="delete from FaitVente" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:From="Package\flux_geo"
+      DTS:To="Package\flux_produit"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:DTSID="{6A852BED-C79A-4AB9-A241-D0041DD5F988}"
+      DTS:CreationName="" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:From="Package\flux_produit"
+      DTS:To="Package\flux_produit_v2"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:DTSID="{8B15084B-016A-476B-84D4-90680768A533}"
+      DTS:CreationName="" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:From="Package\flux_client"
+      DTS:To="Package\flux_site"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:DTSID="{720F39A0-F982-49B8-BFA4-D63A34A11148}"
+      DTS:CreationName="" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:From="Package\flux_produit_v2"
+      DTS:To="Package\flux_client"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:DTSID="{ECDAB0CC-A5EF-4EB6-AE18-2CC4D0B9CBA1}"
+      DTS:CreationName="" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:From="Package\flux_site"
+      DTS:To="Package\flux_factTableVentes"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:DTSID="{F5ADF129-C1C6-46FA-8FBE-EB59F93E7288}"
+      DTS:CreationName="" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:From="Package\vider_faitVente"
+      DTS:To="Package\vider_DimProduit"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:DTSID="{F47F01AF-9489-4454-A51F-1F35BA826712}"
+      DTS:CreationName="" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:From="Package\vider_DimProduit"
+      DTS:To="Package\vider_DimClient"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
+      DTS:DTSID="{52E10E3B-3E71-4EB2-A93A-737A4E336123}"
+      DTS:CreationName="" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
+      DTS:From="Package\vider_DimClient"
+      DTS:To="Package\vider_DimSite"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 7"
+      DTS:DTSID="{D4B7CE5B-E834-4497-8CCF-2F766A2BA75D}"
+      DTS:CreationName="" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
+      DTS:From="Package\vider_DimSite"
+      DTS:To="Package\vider_DimGeo"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 8"
+      DTS:DTSID="{4C8E5B4C-4158-4562-9BA6-EBB4BD5AE9D4}"
+      DTS:CreationName="" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 9]"
+      DTS:From="Package\vider_DimGeo"
+      DTS:To="Package\flux_geo"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 9"
+      DTS:DTSID="{40CF2F6E-67A2-4F68-9845-549D7B782593}"
+      DTS:CreationName="" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -5432,34 +5600,889 @@ where [refTable].[CodePostal] = ?</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="167,42"
-          Id="Package\flux_produit"
-          TopLeft="30,32" />
+          Size="126,42"
+          Id="Package\flux_client"
+          TopLeft="64,197" />
         <NodeLayout
-          Size="200,42"
-          Id="Package\flux_produit_v2"
-          TopLeft="30,96" />
+          Size="176,42"
+          Id="Package\flux_factTableVentes"
+          TopLeft="36,366" />
         <NodeLayout
           Size="172,42"
           Id="Package\flux_geo"
-          TopLeft="311,33" />
+          TopLeft="278,23" />
         <NodeLayout
-          Size="182,42"
-          Id="Package\flux_client"
-          TopLeft="33,157" />
+          Size="167,42"
+          Id="Package\flux_produit"
+          TopLeft="41,26" />
+        <NodeLayout
+          Size="200,42"
+          Id="Package\flux_produit_v2"
+          TopLeft="28,104" />
         <NodeLayout
           Size="166,42"
           Id="Package\flux_site"
-          TopLeft="314,101" />
+          TopLeft="44,277" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="278,45.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-70,0"
+              Start="0,0"
+              End="-62.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-62.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="127,239">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38"
+              Start="0,0"
+              End="0,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="126.25,68">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="127.5,146">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51"
+              Start="0,0"
+              End="0,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="125.5,319">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47"
+              Start="0,0"
+              End="0,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <NodeLayout
-          Size="144,42"
-          Id="Package\flux_factTable"
-          TopLeft="313,172" />
+          Size="169,42"
+          Id="Package\vider_faitVente"
+          TopLeft="558,365" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\vider_DimProduit"
+          TopLeft="562,280" />
+        <NodeLayout
+          Size="152,42"
+          Id="Package\vider_DimClient"
+          TopLeft="562,207" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="642,365">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,-43"
+              Start="0,0"
+              End="0,-35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="639.75,280">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,-31"
+              Start="0,0"
+              End="0,-23.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="152,42"
+          Id="Package\vider_DimSite"
+          TopLeft="566,118" />
+        <NodeLayout
+          Size="152,42"
+          Id="Package\vider_DimGeo"
+          TopLeft="562,21" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="640,207">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,-47"
+              Start="0,0"
+              End="0,-39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 8]"
+          TopLeft="640,118">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,-55"
+              Start="0,0"
+              End="0,-47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-47.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 9]"
+          TopLeft="562,43">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-112,0"
+              Start="0,0"
+              End="-104.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-104.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <TaskHost
+    design-time-name="Package\flux_client">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="162,42"
+          Id="Package\flux_client\recherche_id_geo"
+          TopLeft="287,95" />
+        <NodeLayout
+          Size="193,42"
+          Id="Package\flux_client\dim_client"
+          TopLeft="619,92" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\flux_client\Data Conversion"
+          TopLeft="288,11" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\flux_client\client_sa"
+          TopLeft="71,12" />
+        <EdgeLayout
+          Id="Package\flux_client.Paths[Lookup Match Output]"
+          TopLeft="449,114.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="170,0"
+              Start="0,0"
+              End="162.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="162.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="33.05861328125,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\flux_client.Paths[Data Conversion Output]"
+          TopLeft="366.75,53">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\flux_client.Paths[ADO NET Source Output]"
+          TopLeft="237,32.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="51,0"
+              Start="0,0"
+              End="43.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="43.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\flux_client\recherche_id_geo">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimGeographie]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\flux_client\dim_client">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\flux_client\client_sa">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\flux_factTableVentes">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="130,42"
+          Id="Package\flux_factTableVentes\faitsVentes"
+          TopLeft="677,169" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\flux_factTableVentes\recherche_id_date"
+          TopLeft="425,55" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\flux_factTableVentes\recherche_id_site"
+          TopLeft="428,164" />
+        <NodeLayout
+          Size="137,42"
+          Id="Package\flux_factTableVentes\facture_sa"
+          TopLeft="32,45" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\flux_factTableVentes\Data Conversion"
+          TopLeft="24,126" />
+        <NodeLayout
+          Size="178,42"
+          Id="Package\flux_factTableVentes\recherche_id_produit"
+          TopLeft="204,127" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\flux_factTableVentes\rechereche_id_client"
+          TopLeft="201,261" />
+        <EdgeLayout
+          Id="Package\flux_factTableVentes.Paths[Lookup Match Output1]"
+          TopLeft="316.333333333333,261">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="192.166666666667,-55"
+              Start="0,0"
+              End="192.166666666667,-47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-18.2989807474519" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-18.2989807474519"
+                    Point2="0,-22.2989807474519"
+                    Point3="4,-22.2989807474519" />
+                  <mssgle:LineSegment
+                    End="188.166666666667,-22.2989807474519" />
+                  <mssgle:CubicBezierSegment
+                    Point1="188.166666666667,-22.2989807474519"
+                    Point2="192.166666666667,-22.2989807474519"
+                    Point3="192.166666666667,-26.2989807474519" />
+                  <mssgle:LineSegment
+                    End="192.166666666667,-47.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="47.8919466145833,-17.2989807474519,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\flux_factTableVentes.Paths[Lookup Match Output]"
+          TopLeft="290.75,169">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,92"
+              Start="0,0"
+              End="0,84.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,84.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,36.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\flux_factTableVentes.Paths[Lookup Match Output3]"
+          TopLeft="533.666666666667,97">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="208.333333333333,72"
+              Start="0,0"
+              End="208.333333333333,64.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.2148859543818" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.2148859543818"
+                    Point2="0,29.2148859543818"
+                    Point3="4,29.2148859543818" />
+                  <mssgle:LineSegment
+                    End="204.333333333333,29.2148859543818" />
+                  <mssgle:CubicBezierSegment
+                    Point1="204.333333333333,29.2148859543818"
+                    Point2="208.333333333333,29.2148859543818"
+                    Point3="208.333333333333,33.2148859543818" />
+                  <mssgle:LineSegment
+                    End="208.333333333333,64.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="55.9752799479167,34.2148859543818,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\flux_factTableVentes.Paths[Lookup Match Output2]"
+          TopLeft="508,164">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,-67"
+              Start="0,0"
+              End="0,-59.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-59.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,-35.5546875,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\flux_factTableVentes.Paths[Data Conversion Output]"
+          TopLeft="179,147.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="25,0"
+              Start="0,0"
+              End="17.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="17.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\flux_factTableVentes.Paths[ADO NET Source Output]"
+          TopLeft="101,87">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39"
+              Start="0,0"
+              End="0,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\flux_factTableVentes\faitsVentes">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\flux_factTableVentes\recherche_id_date">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimDates]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\flux_factTableVentes\recherche_id_site">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimSite]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\flux_factTableVentes\facture_sa">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\flux_factTableVentes\recherche_id_produit">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimProduit]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\flux_factTableVentes\rechereche_id_client">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimClient]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\flux_geo">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="146,42"
+          Id="Package\flux_geo\dim_geo"
+          TopLeft="555,74" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\flux_geo\Sort"
+          TopLeft="301,134" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\flux_geo\adresses_sites"
+          TopLeft="46,101" />
+        <NodeLayout
+          Size="120,42"
+          Id="Package\flux_geo\Union All"
+          TopLeft="301,68" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\flux_geo\adresses_clients"
+          TopLeft="47,38" />
+        <EdgeLayout
+          Id="Package\flux_geo.Paths[Union All Output 1]"
+          TopLeft="361.25,110">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24"
+              Start="0,0"
+              End="0,16.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\flux_geo.Paths[Sort Output]"
+          TopLeft="422,155">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="133,-60"
+              Start="0,0"
+              End="125.5,-60">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="62.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="62.5,0"
+                    Point2="66.5,0"
+                    Point3="66.5,-4" />
+                  <mssgle:LineSegment
+                    End="66.5,-56" />
+                  <mssgle:CubicBezierSegment
+                    Point1="66.5,-56"
+                    Point2="66.5,-60"
+                    Point3="70.5,-60" />
+                  <mssgle:LineSegment
+                    End="125.5,-60" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\flux_geo.Paths[ADO NET Source Output]"
+          TopLeft="201,59">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="100,24.3333333333333"
+              Start="0,0"
+              End="92.5,24.3333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="53.7981651376147,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="53.7981651376147,0"
+                    Point2="57.7981651376147,0"
+                    Point3="57.7981651376147,4" />
+                  <mssgle:LineSegment
+                    End="57.7981651376147,20.3333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="57.7981651376147,20.3333333333333"
+                    Point2="57.7981651376147,24.3333333333333"
+                    Point3="61.7981651376147,24.3333333333333" />
+                  <mssgle:LineSegment
+                    End="92.5,24.3333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\flux_geo.Paths[ADO NET Source Output1]"
+          TopLeft="200,122">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="101,-27.3333333333333"
+              Start="0,0"
+              End="93.5,-27.3333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="54.3761467889908,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="54.3761467889908,0"
+                    Point2="58.3761467889908,0"
+                    Point3="58.3761467889908,-4" />
+                  <mssgle:LineSegment
+                    End="58.3761467889908,-23.3333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="58.3761467889908,-23.3333333333333"
+                    Point2="58.3761467889908,-27.3333333333333"
+                    Point3="62.3761467889908,-27.3333333333333" />
+                  <mssgle:LineSegment
+                    End="93.5,-27.3333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\flux_geo\dim_geo">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\flux_geo\adresses_sites">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\flux_geo\adresses_clients">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\flux_produit">
     <LayoutInfo>
@@ -5537,25 +6560,25 @@ where [refTable].[CodePostal] = ?</property>
           TopLeft="635,96" />
         <EdgeLayout
           Id="Package\flux_produit_v2.Paths[Lookup Match Output1]"
-          TopLeft="475,117">
+          TopLeft="177,117.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="160,0"
+              EndConnector="151,0"
               Start="0,0"
-              End="152.5,0">
+              End="143.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="152.5,0" />
+                    End="143.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="28.05861328125,5,96.3827734375,11.609375"
+              BoundingBox="23.55861328125,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -5583,25 +6606,25 @@ where [refTable].[CodePostal] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\flux_produit_v2.Paths[Lookup Match Output]"
-          TopLeft="177,117.5">
+          TopLeft="475,117">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="151,0"
+              EndConnector="160,0"
               Start="0,0"
-              End="143.5,0">
+              End="152.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="143.5,0" />
+                    End="152.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="23.55861328125,5,96.3827734375,11.609375"
+              BoundingBox="28.05861328125,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -5671,313 +6694,6 @@ where [refTable].[CodePostal] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\flux_geo">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="154,42"
-          Id="Package\flux_geo\adresses_clients"
-          TopLeft="47,38" />
-        <NodeLayout
-          Size="154,42"
-          Id="Package\flux_geo\adresses_sites"
-          TopLeft="46,101" />
-        <NodeLayout
-          Size="120,42"
-          Id="Package\flux_geo\Union All"
-          TopLeft="301,68" />
-        <EdgeLayout
-          Id="Package\flux_geo.Paths[ADO NET Source Output1]"
-          TopLeft="201,59">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="100,24.3333333333333"
-              Start="0,0"
-              End="92.5,24.3333333333333">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="53.7981651376147,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="53.7981651376147,0"
-                    Point2="57.7981651376147,0"
-                    Point3="57.7981651376147,4" />
-                  <mssgle:LineSegment
-                    End="57.7981651376147,20.3333333333333" />
-                  <mssgle:CubicBezierSegment
-                    Point1="57.7981651376147,20.3333333333333"
-                    Point2="57.7981651376147,24.3333333333333"
-                    Point3="61.7981651376147,24.3333333333333" />
-                  <mssgle:LineSegment
-                    End="92.5,24.3333333333333" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\flux_geo.Paths[ADO NET Source Output]"
-          TopLeft="200,122">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="101,-27.3333333333333"
-              Start="0,0"
-              End="93.5,-27.3333333333333">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="54.3761467889908,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="54.3761467889908,0"
-                    Point2="58.3761467889908,0"
-                    Point3="58.3761467889908,-4" />
-                  <mssgle:LineSegment
-                    End="58.3761467889908,-23.3333333333333" />
-                  <mssgle:CubicBezierSegment
-                    Point1="58.3761467889908,-23.3333333333333"
-                    Point2="58.3761467889908,-27.3333333333333"
-                    Point3="62.3761467889908,-27.3333333333333" />
-                  <mssgle:LineSegment
-                    End="93.5,-27.3333333333333" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="121,42"
-          Id="Package\flux_geo\Sort"
-          TopLeft="301,134" />
-        <EdgeLayout
-          Id="Package\flux_geo.Paths[Union All Output 1]"
-          TopLeft="361.25,110">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,24"
-              Start="0,0"
-              End="0,16.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="146,42"
-          Id="Package\flux_geo\dim_geo"
-          TopLeft="555,74" />
-        <EdgeLayout
-          Id="Package\flux_geo.Paths[Sort Output]"
-          TopLeft="422,155">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="133,-60"
-              Start="0,0"
-              End="125.5,-60">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="62.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="62.5,0"
-                    Point2="66.5,0"
-                    Point3="66.5,-4" />
-                  <mssgle:LineSegment
-                    End="66.5,-56" />
-                  <mssgle:CubicBezierSegment
-                    Point1="66.5,-56"
-                    Point2="66.5,-60"
-                    Point3="70.5,-60" />
-                  <mssgle:LineSegment
-                    End="125.5,-60" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\flux_geo\adresses_clients">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\flux_geo\adresses_sites">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\flux_geo\dim_geo">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\flux_client">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="166,42"
-          Id="Package\flux_client\client_sa"
-          TopLeft="71,12" />
-        <NodeLayout
-          Size="193,42"
-          Id="Package\flux_client\dim_client"
-          TopLeft="619,92" />
-        <NodeLayout
-          Size="162,42"
-          Id="Package\flux_client\recherche_id_geo"
-          TopLeft="287,95" />
-        <NodeLayout
-          Size="155,42"
-          Id="Package\flux_client\Data Conversion"
-          TopLeft="288,11" />
-        <EdgeLayout
-          Id="Package\flux_client.Paths[ADO NET Source Output]"
-          TopLeft="237,32.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="51,0"
-              Start="0,0"
-              End="43.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="43.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\flux_client.Paths[Data Conversion Output]"
-          TopLeft="366.75,53">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,42"
-              Start="0,0"
-              End="0,34.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\flux_client.Paths[Lookup Match Output]"
-          TopLeft="449,114.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="170,0"
-              Start="0,0"
-              End="162.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="162.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="33.05861328125,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\flux_client\client_sa">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\flux_client\dim_client">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\flux_client\recherche_id_geo">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimGeographie]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
     design-time-name="Package\flux_site">
     <LayoutInfo>
       <GraphLayout
@@ -5987,61 +6703,17 @@ where [refTable].[CodePostal] = ?</property>
           Id="Package\flux_site\site_sa"
           TopLeft="40,49" />
         <NodeLayout
-          Size="155,42"
-          Id="Package\flux_site\Data Conversion"
-          TopLeft="227,49" />
+          Size="142,42"
+          Id="Package\flux_site\dim_site"
+          TopLeft="532,127" />
         <NodeLayout
           Size="147,42"
           Id="Package\flux_site\recherche_geo"
           TopLeft="232,126" />
-        <EdgeLayout
-          Id="Package\flux_site.Paths[ADO NET Source Output]"
-          TopLeft="151,70">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="76,0"
-              Start="0,0"
-              End="68.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="68.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\flux_site.Paths[Data Conversion Output]"
-          TopLeft="305,91">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,35"
-              Start="0,0"
-              End="0,27.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
-          Size="142,42"
-          Id="Package\flux_site\dim_site"
-          TopLeft="532,127" />
+          Size="155,42"
+          Id="Package\flux_site\Data Conversion"
+          TopLeft="227,49" />
         <EdgeLayout
           Id="Package\flux_site.Paths[Lookup Match Output]"
           TopLeft="379,147.5">
@@ -6066,35 +6738,56 @@ where [refTable].[CodePostal] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\flux_site.Paths[Data Conversion Output]"
+          TopLeft="305,91">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35"
+              Start="0,0"
+              End="0,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\flux_site.Paths[ADO NET Source Output]"
+          TopLeft="151,70">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="76,0"
+              Start="0,0"
+              End="68.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="68.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\flux_site\site_sa">
     <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\flux_site\recherche_geo">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimGeographie]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
@@ -6108,308 +6801,23 @@ where [refTable].[CodePostal] = ?</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\flux_factTable">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="137,42"
-          Id="Package\flux_factTable\facture_sa"
-          TopLeft="32,45" />
-        <NodeLayout
-          Size="130,42"
-          Id="Package\flux_factTable\faitsVentes"
-          TopLeft="677,169" />
-        <NodeLayout
-          Size="175,42"
-          Id="Package\flux_factTable\rechereche_id_client"
-          TopLeft="201,261" />
-        <NodeLayout
-          Size="161,42"
-          Id="Package\flux_factTable\recherche_id_site"
-          TopLeft="428,164" />
-        <NodeLayout
-          Size="155,42"
-          Id="Package\flux_factTable\Data Conversion"
-          TopLeft="24,126" />
-        <NodeLayout
-          Size="165,42"
-          Id="Package\flux_factTable\recherche_id_date"
-          TopLeft="425,55" />
-        <NodeLayout
-          Size="178,42"
-          Id="Package\flux_factTable\recherche_id_produit"
-          TopLeft="204,127" />
-        <EdgeLayout
-          Id="Package\flux_factTable.Paths[ADO NET Source Output]"
-          TopLeft="101,87">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,39"
-              Start="0,0"
-              End="0,31.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\flux_factTable.Paths[Data Conversion Output]"
-          TopLeft="179,147.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="25,0"
-              Start="0,0"
-              End="17.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="17.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\flux_factTable.Paths[Lookup Match Output2]"
-          TopLeft="290.75,169">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,92"
-              Start="0,0"
-              End="0,84.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,84.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,36.4453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\flux_factTable.Paths[Lookup Match Output3]"
-          TopLeft="316.333333333333,261">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="192.166666666667,-55"
-              Start="0,0"
-              End="192.166666666667,-47.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-18.2989807474519" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-18.2989807474519"
-                    Point2="0,-22.2989807474519"
-                    Point3="4,-22.2989807474519" />
-                  <mssgle:LineSegment
-                    End="188.166666666667,-22.2989807474519" />
-                  <mssgle:CubicBezierSegment
-                    Point1="188.166666666667,-22.2989807474519"
-                    Point2="192.166666666667,-22.2989807474519"
-                    Point3="192.166666666667,-26.2989807474519" />
-                  <mssgle:LineSegment
-                    End="192.166666666667,-47.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="47.8919466145833,-17.2989807474519,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\flux_factTable.Paths[Lookup Match Output]"
-          TopLeft="508,164">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,-67"
-              Start="0,0"
-              End="0,-59.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-59.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,-35.5546875,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\flux_factTable.Paths[Lookup Match Output1]"
-          TopLeft="533.666666666667,97">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="208.333333333333,72"
-              Start="0,0"
-              End="208.333333333333,64.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25.2148859543818" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25.2148859543818"
-                    Point2="0,29.2148859543818"
-                    Point3="4,29.2148859543818" />
-                  <mssgle:LineSegment
-                    End="204.333333333333,29.2148859543818" />
-                  <mssgle:CubicBezierSegment
-                    Point1="204.333333333333,29.2148859543818"
-                    Point2="208.333333333333,29.2148859543818"
-                    Point3="208.333333333333,33.2148859543818" />
-                  <mssgle:LineSegment
-                    End="208.333333333333,64.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="55.9752799479167,34.2148859543818,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\flux_factTable\facture_sa">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\flux_factTable\faitsVentes">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\flux_factTable\rechereche_id_client">
+    design-time-name="Package\flux_site\recherche_geo">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[DimClient]</Value>
+          type="q3:string">[dbo].[DimGeographie]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\flux_factTable\recherche_id_site">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimSite]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\flux_factTable\recherche_id_date">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimDates]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\flux_factTable\recherche_id_produit">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimProduit]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

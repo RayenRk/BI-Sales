@@ -1,0 +1,1130 @@
+<?xml version="1.0"?>
+<DTS:Executable
+  DTS:refId="Package" xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:CreatorName="DESKTOP-FOOVI2J\Raghda"
+  DTS:CreatorComputerName="DESKTOP-FOOVI2J"
+  DTS:CreationDate="3/5/2024 10:06:59 AM"
+  DTS:PackageType="5"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{FBCC88BC-FF49-4065-91E8-91695B4504E2}"
+  DTS:LastModifiedProductVersion="11.0.2100.60"
+  DTS:LocaleID="1036"
+  DTS:ObjectName="ChargementDWFull"
+  DTS:DTSID="{5CAAE11D-DA7F-444B-A97A-C33694C4CC53}"
+  DTS:CreationName="SSIS.Package.3">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-FOOVI2J.DW_VENTES]"
+      DTS:ObjectName="DESKTOP-FOOVI2J.DW_VENTES"
+      DTS:DTSID="{FCCB5A73-DFA1-4261-B371-045C5DB82F0F}"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-FOOVI2J;Initial Catalog=DW_VENTES;Integrated Security=True;Application Name=SSIS-ChargementDW-{FCCB5A73-DFA1-4261-B371-045C5DB82F0F}DESKTOP-FOOVI2J.DW_VENTES;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-FOOVI2J.DW_VENTES1]"
+      DTS:ObjectName="DESKTOP-FOOVI2J.DW_VENTES1"
+      DTS:DTSID="{9BF5D884-4FA7-40F7-B6FF-D3BBC19846E7}"
+      DTS:CreationName="OLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-FOOVI2J;Initial Catalog=DW_VENTES;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-FOOVI2J.ProjetVente_SA]"
+      DTS:ObjectName="DESKTOP-FOOVI2J.ProjetVente_SA"
+      DTS:DTSID="{9C4B341F-708F-4FA4-95CF-3EB85306A9F6}"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-FOOVI2J;Initial Catalog=ProjetVente_SA;Integrated Security=True;Application Name=SSIS-ChargementDWFull-{9C4B341F-708F-4FA4-95CF-3EB85306A9F6}DESKTOP-FOOVI2J.ProjetVente_SA;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-FOOVI2J.ProjetVente_SA 1]"
+      DTS:ObjectName="DESKTOP-FOOVI2J.ProjetVente_SA 1"
+      DTS:DTSID="{709CB1DC-4C6A-4BA7-8C34-03838FF98AA8}"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-FOOVI2J;Initial Catalog=ProjetVente_SA;Integrated Security=True;Application Name=SSIS-ChargementDW-{709CB1DC-4C6A-4BA7-8C34-03838FF98AA8}DESKTOP-FOOVI2J.ProjetVente_SA;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\flux_client"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="flux_client"
+      DTS:DTSID="{897784BE-A4EE-4700-BC05-424B6F810BFD}"
+      DTS:Description="Data Flow Task"
+      DTS:CreationName="SSIS.Pipeline.3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\flux_client\client_sa"
+              name="client_sa"
+              componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+              description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
+              usesDispositions="true"
+              version="4"
+              contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4">
+              <properties>
+                <property
+                  name="SqlCommand"
+                  dataType="System.String"
+                  description="Specifies the SQL statement used by the component to extract data."
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                  expressionType="Notify"></property>
+                <property
+                  name="CommandTimeout"
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out.">30</property>
+                <property
+                  name="AllowImplicitStringConversion"
+                  dataType="System.Boolean"
+                  description="Indicates whether to allow non-string external columns to be implicitly converted to strings at the output columns.">true</property>
+                <property
+                  name="TableOrViewName"
+                  dataType="System.String"
+                  description="The Source database table name."
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version= 11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                  expressionType="Notify">"dbo"."Client_SA"</property>
+                <property
+                  name="AccessMode"
+                  dataType="System.Int32"
+                  description="Specify the mode to retrieve external column information"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter, Microsoft.SqlServer.ADONETSrc, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">0</property>
+                <property
+                  name="UserComponentTypeName"
+                  dataType="System.String">Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter, Microsoft.SqlServer.ADONETSrc, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\flux_client\client_sa.Connections[IDbConnection]"
+                  name="IDbConnection"
+                  description="Managed connection manager"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-FOOVI2J.ProjetVente_SA 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-FOOVI2J.ProjetVente_SA 1]" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\flux_client\client_sa.Outputs[ADO NET Source Output]"
+                  name="ADO NET Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\flux_client\client_sa.Outputs[ADO NET Source Output].Columns[ClientCode]"
+                      name="ClientCode"
+                      lineageId="Package\flux_client\client_sa.Outputs[ADO NET Source Output].Columns[ClientCode]"
+                      length="50"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\flux_client\client_sa.Outputs[ADO NET Source Output].ExternalColumns[ClientCode]" />
+                    <outputColumn
+                      refId="Package\flux_client\client_sa.Outputs[ADO NET Source Output].Columns[Client]"
+                      name="Client"
+                      lineageId="Package\flux_client\client_sa.Outputs[ADO NET Source Output].Columns[Client]"
+                      length="50"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\flux_client\client_sa.Outputs[ADO NET Source Output].ExternalColumns[Client]" />
+                    <outputColumn
+                      refId="Package\flux_client\client_sa.Outputs[ADO NET Source Output].Columns[TypeClient]"
+                      name="TypeClient"
+                      lineageId="Package\flux_client\client_sa.Outputs[ADO NET Source Output].Columns[TypeClient]"
+                      length="50"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\flux_client\client_sa.Outputs[ADO NET Source Output].ExternalColumns[TypeClient]" />
+                    <outputColumn
+                      refId="Package\flux_client\client_sa.Outputs[ADO NET Source Output].Columns[SegmentationClient]"
+                      name="SegmentationClient"
+                      lineageId="Package\flux_client\client_sa.Outputs[ADO NET Source Output].Columns[SegmentationClient]"
+                      length="50"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\flux_client\client_sa.Outputs[ADO NET Source Output].ExternalColumns[SegmentationClient]" />
+                    <outputColumn
+                      refId="Package\flux_client\client_sa.Outputs[ADO NET Source Output].Columns[PaysCode]"
+                      name="PaysCode"
+                      lineageId="Package\flux_client\client_sa.Outputs[ADO NET Source Output].Columns[PaysCode]"
+                      length="50"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\flux_client\client_sa.Outputs[ADO NET Source Output].ExternalColumns[PaysCode]" />
+                    <outputColumn
+                      refId="Package\flux_client\client_sa.Outputs[ADO NET Source Output].Columns[Pays]"
+                      name="Pays"
+                      lineageId="Package\flux_client\client_sa.Outputs[ADO NET Source Output].Columns[Pays]"
+                      length="50"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\flux_client\client_sa.Outputs[ADO NET Source Output].ExternalColumns[Pays]" />
+                    <outputColumn
+                      refId="Package\flux_client\client_sa.Outputs[ADO NET Source Output].Columns[DepartementCode]"
+                      name="DepartementCode"
+                      lineageId="Package\flux_client\client_sa.Outputs[ADO NET Source Output].Columns[DepartementCode]"
+                      length="50"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\flux_client\client_sa.Outputs[ADO NET Source Output].ExternalColumns[DepartementCode]" />
+                    <outputColumn
+                      refId="Package\flux_client\client_sa.Outputs[ADO NET Source Output].Columns[Departement]"
+                      name="Departement"
+                      lineageId="Package\flux_client\client_sa.Outputs[ADO NET Source Output].Columns[Departement]"
+                      length="50"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\flux_client\client_sa.Outputs[ADO NET Source Output].ExternalColumns[Departement]" />
+                    <outputColumn
+                      refId="Package\flux_client\client_sa.Outputs[ADO NET Source Output].Columns[CodePostal]"
+                      name="CodePostal"
+                      lineageId="Package\flux_client\client_sa.Outputs[ADO NET Source Output].Columns[CodePostal]"
+                      length="50"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\flux_client\client_sa.Outputs[ADO NET Source Output].ExternalColumns[CodePostal]" />
+                    <outputColumn
+                      refId="Package\flux_client\client_sa.Outputs[ADO NET Source Output].Columns[Ville]"
+                      name="Ville"
+                      lineageId="Package\flux_client\client_sa.Outputs[ADO NET Source Output].Columns[Ville]"
+                      length="50"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\flux_client\client_sa.Outputs[ADO NET Source Output].ExternalColumns[Ville]" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\flux_client\client_sa.Outputs[ADO NET Source Output].ExternalColumns[ClientCode]"
+                      name="ClientCode"
+                      dataType="wstr"
+                      length="50" />
+                    <externalMetadataColumn
+                      refId="Package\flux_client\client_sa.Outputs[ADO NET Source Output].ExternalColumns[Client]"
+                      name="Client"
+                      dataType="wstr"
+                      length="50" />
+                    <externalMetadataColumn
+                      refId="Package\flux_client\client_sa.Outputs[ADO NET Source Output].ExternalColumns[TypeClient]"
+                      name="TypeClient"
+                      dataType="wstr"
+                      length="50" />
+                    <externalMetadataColumn
+                      refId="Package\flux_client\client_sa.Outputs[ADO NET Source Output].ExternalColumns[SegmentationClient]"
+                      name="SegmentationClient"
+                      dataType="wstr"
+                      length="50" />
+                    <externalMetadataColumn
+                      refId="Package\flux_client\client_sa.Outputs[ADO NET Source Output].ExternalColumns[PaysCode]"
+                      name="PaysCode"
+                      dataType="wstr"
+                      length="50" />
+                    <externalMetadataColumn
+                      refId="Package\flux_client\client_sa.Outputs[ADO NET Source Output].ExternalColumns[Pays]"
+                      name="Pays"
+                      dataType="wstr"
+                      length="50" />
+                    <externalMetadataColumn
+                      refId="Package\flux_client\client_sa.Outputs[ADO NET Source Output].ExternalColumns[DepartementCode]"
+                      name="DepartementCode"
+                      dataType="wstr"
+                      length="50" />
+                    <externalMetadataColumn
+                      refId="Package\flux_client\client_sa.Outputs[ADO NET Source Output].ExternalColumns[Departement]"
+                      name="Departement"
+                      dataType="wstr"
+                      length="50" />
+                    <externalMetadataColumn
+                      refId="Package\flux_client\client_sa.Outputs[ADO NET Source Output].ExternalColumns[CodePostal]"
+                      name="CodePostal"
+                      dataType="wstr"
+                      length="50" />
+                    <externalMetadataColumn
+                      refId="Package\flux_client\client_sa.Outputs[ADO NET Source Output].ExternalColumns[Ville]"
+                      name="Ville"
+                      dataType="wstr"
+                      length="50" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\flux_client\client_sa.Outputs[ADO NET Source Error Output]"
+                  name="ADO NET Source Error Output"
+                  isErrorOut="true">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\flux_client\client_sa.Outputs[ADO NET Source Error Output].Columns[ClientCode]"
+                      name="ClientCode"
+                      lineageId="Package\flux_client\client_sa.Outputs[ADO NET Source Error Output].Columns[ClientCode]"
+                      length="50"
+                      dataType="wstr" />
+                    <outputColumn
+                      refId="Package\flux_client\client_sa.Outputs[ADO NET Source Error Output].Columns[Client]"
+                      name="Client"
+                      lineageId="Package\flux_client\client_sa.Outputs[ADO NET Source Error Output].Columns[Client]"
+                      length="50"
+                      dataType="wstr" />
+                    <outputColumn
+                      refId="Package\flux_client\client_sa.Outputs[ADO NET Source Error Output].Columns[TypeClient]"
+                      name="TypeClient"
+                      lineageId="Package\flux_client\client_sa.Outputs[ADO NET Source Error Output].Columns[TypeClient]"
+                      length="50"
+                      dataType="wstr" />
+                    <outputColumn
+                      refId="Package\flux_client\client_sa.Outputs[ADO NET Source Error Output].Columns[SegmentationClient]"
+                      name="SegmentationClient"
+                      lineageId="Package\flux_client\client_sa.Outputs[ADO NET Source Error Output].Columns[SegmentationClient]"
+                      length="50"
+                      dataType="wstr" />
+                    <outputColumn
+                      refId="Package\flux_client\client_sa.Outputs[ADO NET Source Error Output].Columns[PaysCode]"
+                      name="PaysCode"
+                      lineageId="Package\flux_client\client_sa.Outputs[ADO NET Source Error Output].Columns[PaysCode]"
+                      length="50"
+                      dataType="wstr" />
+                    <outputColumn
+                      refId="Package\flux_client\client_sa.Outputs[ADO NET Source Error Output].Columns[Pays]"
+                      name="Pays"
+                      lineageId="Package\flux_client\client_sa.Outputs[ADO NET Source Error Output].Columns[Pays]"
+                      length="50"
+                      dataType="wstr" />
+                    <outputColumn
+                      refId="Package\flux_client\client_sa.Outputs[ADO NET Source Error Output].Columns[DepartementCode]"
+                      name="DepartementCode"
+                      lineageId="Package\flux_client\client_sa.Outputs[ADO NET Source Error Output].Columns[DepartementCode]"
+                      length="50"
+                      dataType="wstr" />
+                    <outputColumn
+                      refId="Package\flux_client\client_sa.Outputs[ADO NET Source Error Output].Columns[Departement]"
+                      name="Departement"
+                      lineageId="Package\flux_client\client_sa.Outputs[ADO NET Source Error Output].Columns[Departement]"
+                      length="50"
+                      dataType="wstr" />
+                    <outputColumn
+                      refId="Package\flux_client\client_sa.Outputs[ADO NET Source Error Output].Columns[CodePostal]"
+                      name="CodePostal"
+                      lineageId="Package\flux_client\client_sa.Outputs[ADO NET Source Error Output].Columns[CodePostal]"
+                      length="50"
+                      dataType="wstr" />
+                    <outputColumn
+                      refId="Package\flux_client\client_sa.Outputs[ADO NET Source Error Output].Columns[Ville]"
+                      name="Ville"
+                      lineageId="Package\flux_client\client_sa.Outputs[ADO NET Source Error Output].Columns[Ville]"
+                      length="50"
+                      dataType="wstr" />
+                    <outputColumn
+                      refId="Package\flux_client\client_sa.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      lineageId="Package\flux_client\client_sa.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\flux_client\client_sa.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      lineageId="Package\flux_client\client_sa.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\flux_client\Data Conversion"
+              name="Data Conversion"
+              componentClassID="{62B1106C-7DB8-4EC8-ADD6-4C664DFFC54A}"
+              description="Data Conversion"
+              usesDispositions="true"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0">
+              <inputs>
+                <input
+                  refId="Package\flux_client\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\flux_client\Data Conversion.Inputs[Data Conversion Input].Columns[CodePostal]"
+                      lineageId="Package\flux_client\client_sa.Outputs[ADO NET Source Output].Columns[CodePostal]"
+                      cachedName="CodePostal"
+                      cachedDataType="wstr"
+                      cachedLength="50" />
+                    <inputColumn
+                      refId="Package\flux_client\Data Conversion.Inputs[Data Conversion Input].Columns[ClientCode]"
+                      lineageId="Package\flux_client\client_sa.Outputs[ADO NET Source Output].Columns[ClientCode]"
+                      cachedName="ClientCode"
+                      cachedDataType="wstr"
+                      cachedLength="50" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\flux_client\Data Conversion.Outputs[Data Conversion Output]"
+                  name="Data Conversion Output"
+                  exclusionGroup="1"
+                  synchronousInputId="Package\flux_client\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\flux_client\Data Conversion.Outputs[Data Conversion Output].Columns[CodePostalConverted]"
+                      name="CodePostalConverted"
+                      lineageId="Package\flux_client\Data Conversion.Outputs[Data Conversion Output].Columns[CodePostalConverted]"
+                      length="50"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          name="SourceInputColumnLineageID"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          containsID="true">#{Package\flux_client\client_sa.Outputs[ADO NET Source Output].Columns[CodePostal]}</property>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\flux_client\Data Conversion.Outputs[Data Conversion Output].Columns[ClientCodeConverted]"
+                      name="ClientCodeConverted"
+                      lineageId="Package\flux_client\Data Conversion.Outputs[Data Conversion Output].Columns[ClientCodeConverted]"
+                      length="50"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          name="SourceInputColumnLineageID"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          containsID="true">#{Package\flux_client\client_sa.Outputs[ADO NET Source Output].Columns[ClientCode]}</property>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\flux_client\Data Conversion.Outputs[Data Conversion Error Output]"
+                  name="Data Conversion Error Output"
+                  exclusionGroup="1"
+                  synchronousInputId="Package\flux_client\Data Conversion.Inputs[Data Conversion Input]"
+                  isErrorOut="true">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\flux_client\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      lineageId="Package\flux_client\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\flux_client\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      lineageId="Package\flux_client\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\flux_client\dim_client"
+              name="dim_client"
+              componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+              description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+              usesDispositions="true"
+              version="2"
+              contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2">
+              <properties>
+                <property
+                  name="TableOrViewName"
+                  dataType="System.String"
+                  description="The Destination database table name."
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version= 11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                  expressionType="Notify">"dbo"."DimClient"</property>
+                <property
+                  name="BatchSize"
+                  dataType="System.Int32"
+                  description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                  expressionType="Notify">0</property>
+                <property
+                  name="CommandTimeout"
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                  expressionType="Notify">30</property>
+                <property
+                  name="UseBulkInsertWhenPossible"
+                  dataType="System.Boolean"
+                  description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                  expressionType="Notify">true</property>
+                <property
+                  name="UserComponentTypeName"
+                  dataType="System.String">Microsoft.SqlServer.Dts.Pipeline.ADONETDestination, Microsoft.SqlServer.ADONETDest, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\flux_client\dim_client.Connections[IDbConnection]"
+                  name="IDbConnection"
+                  description="Managed connection manager"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-FOOVI2J.DW_VENTES]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-FOOVI2J.DW_VENTES]" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\flux_client\dim_client.Inputs[ADO NET Destination Input]"
+                  name="ADO NET Destination Input"
+                  hasSideEffects="true"
+                  errorRowDisposition="FailComponent">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\flux_client\dim_client.Inputs[ADO NET Destination Input].Columns[ClientCode]"
+                      lineageId="Package\flux_client\client_sa.Outputs[ADO NET Source Output].Columns[ClientCode]"
+                      externalMetadataColumnId="Package\flux_client\dim_client.Inputs[ADO NET Destination Input].ExternalColumns[ClientCode]"
+                      cachedName="ClientCode"
+                      cachedDataType="wstr"
+                      cachedLength="50" />
+                    <inputColumn
+                      refId="Package\flux_client\dim_client.Inputs[ADO NET Destination Input].Columns[Client]"
+                      lineageId="Package\flux_client\client_sa.Outputs[ADO NET Source Output].Columns[Client]"
+                      externalMetadataColumnId="Package\flux_client\dim_client.Inputs[ADO NET Destination Input].ExternalColumns[Client]"
+                      cachedName="Client"
+                      cachedDataType="wstr"
+                      cachedLength="50" />
+                    <inputColumn
+                      refId="Package\flux_client\dim_client.Inputs[ADO NET Destination Input].Columns[TypeClient]"
+                      lineageId="Package\flux_client\client_sa.Outputs[ADO NET Source Output].Columns[TypeClient]"
+                      externalMetadataColumnId="Package\flux_client\dim_client.Inputs[ADO NET Destination Input].ExternalColumns[TypeClient]"
+                      cachedName="TypeClient"
+                      cachedDataType="wstr"
+                      cachedLength="50" />
+                    <inputColumn
+                      refId="Package\flux_client\dim_client.Inputs[ADO NET Destination Input].Columns[SegmentationClient]"
+                      lineageId="Package\flux_client\client_sa.Outputs[ADO NET Source Output].Columns[SegmentationClient]"
+                      externalMetadataColumnId="Package\flux_client\dim_client.Inputs[ADO NET Destination Input].ExternalColumns[SegmentationClient]"
+                      cachedName="SegmentationClient"
+                      cachedDataType="wstr"
+                      cachedLength="50" />
+                    <inputColumn
+                      refId="Package\flux_client\dim_client.Inputs[ADO NET Destination Input].Columns[Geographie_PK_Ref]"
+                      lineageId="Package\flux_client\recherche_id_geo.Outputs[Lookup Match Output].Columns[Geographie_PK_Ref]"
+                      externalMetadataColumnId="Package\flux_client\dim_client.Inputs[ADO NET Destination Input].ExternalColumns[GeographieClient_FK]"
+                      cachedName="Geographie_PK_Ref"
+                      cachedDataType="i4" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\flux_client\dim_client.Inputs[ADO NET Destination Input].ExternalColumns[Client_PK]"
+                      name="Client_PK"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\flux_client\dim_client.Inputs[ADO NET Destination Input].ExternalColumns[GeographieClient_FK]"
+                      name="GeographieClient_FK"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\flux_client\dim_client.Inputs[ADO NET Destination Input].ExternalColumns[ClientCode]"
+                      name="ClientCode"
+                      dataType="wstr"
+                      length="50" />
+                    <externalMetadataColumn
+                      refId="Package\flux_client\dim_client.Inputs[ADO NET Destination Input].ExternalColumns[Client]"
+                      name="Client"
+                      dataType="wstr"
+                      length="50" />
+                    <externalMetadataColumn
+                      refId="Package\flux_client\dim_client.Inputs[ADO NET Destination Input].ExternalColumns[TypeClient]"
+                      name="TypeClient"
+                      dataType="wstr"
+                      length="50" />
+                    <externalMetadataColumn
+                      refId="Package\flux_client\dim_client.Inputs[ADO NET Destination Input].ExternalColumns[SegmentationClient]"
+                      name="SegmentationClient"
+                      dataType="wstr"
+                      length="50" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\flux_client\dim_client.Outputs[ADO NET Destination Error Output]"
+                  name="ADO NET Destination Error Output"
+                  exclusionGroup="1"
+                  synchronousInputId="Package\flux_client\dim_client.Inputs[ADO NET Destination Input]"
+                  isErrorOut="true">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\flux_client\dim_client.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      lineageId="Package\flux_client\dim_client.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\flux_client\dim_client.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      lineageId="Package\flux_client\dim_client.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\flux_client\recherche_existant"
+              name="recherche_existant"
+              componentClassID="{671046B0-AA63-4C9F-90E4-C06E0B710CE3}"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              usesDispositions="true"
+              version="6"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6">
+              <properties>
+                <property
+                  name="SqlCommand"
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                  expressionType="Notify">select * from [dbo].[DimClient]</property>
+                <property
+                  name="SqlCommandParam"
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                  expressionType="Notify">select * from (select * from [dbo].[DimClient]) [refTable]
+where [refTable].[ClientCode] = ?</property>
+                <property
+                  name="ConnectionType"
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  name="CacheType"
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  typeConverter="CacheType">0</property>
+                <property
+                  name="NoMatchBehavior"
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  name="NoMatchCachePercentage"
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset.">0</property>
+                <property
+                  name="MaxMemoryUsage"
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform.">25</property>
+                <property
+                  name="MaxMemoryUsage64"
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform.">25</property>
+                <property
+                  name="ReferenceMetadataXml"
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format.">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Client_PK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GeographieClient_FK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ClientCode" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Client" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="TypeClient" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="SegmentationClient" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  name="ParameterMap"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  containsID="true">#{Package\flux_client\Data Conversion.Outputs[Data Conversion Output].Columns[ClientCodeConverted]};</property>
+                <property
+                  name="DefaultCodePage"
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source.">1252</property>
+                <property
+                  name="TreatDuplicateKeysAsError"
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used.">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\flux_client\recherche_existant.Connections[OleDbConnection]"
+                  name="OleDbConnection"
+                  description="Connection manager used to access lookup data."
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-FOOVI2J.DW_VENTES1]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-FOOVI2J.DW_VENTES1]" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\flux_client\recherche_existant.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\flux_client\recherche_existant.Inputs[Lookup Input].Columns[ClientCodeConverted]"
+                      lineageId="Package\flux_client\Data Conversion.Outputs[Data Conversion Output].Columns[ClientCodeConverted]"
+                      cachedName="ClientCodeConverted"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedCodepage="1252">
+                      <properties>
+                        <property
+                          name="JoinToReferenceColumn"
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins.">ClientCode</property>
+                        <property
+                          name="CopyFromReferenceColumn"
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied." />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\flux_client\recherche_existant.Outputs[Lookup Match Output]"
+                  name="Lookup Match Output"
+                  exclusionGroup="1"
+                  synchronousInputId="Package\flux_client\recherche_existant.Inputs[Lookup Input]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\flux_client\recherche_existant.Outputs[Lookup No Match Output]"
+                  name="Lookup No Match Output"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  synchronousInputId="Package\flux_client\recherche_existant.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\flux_client\recherche_existant.Outputs[Lookup Error Output]"
+                  name="Lookup Error Output"
+                  exclusionGroup="1"
+                  synchronousInputId="Package\flux_client\recherche_existant.Inputs[Lookup Input]"
+                  isErrorOut="true">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\flux_client\recherche_existant.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      lineageId="Package\flux_client\recherche_existant.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\flux_client\recherche_existant.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      lineageId="Package\flux_client\recherche_existant.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\flux_client\recherche_id_geo"
+              name="recherche_id_geo"
+              componentClassID="{671046B0-AA63-4C9F-90E4-C06E0B710CE3}"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              usesDispositions="true"
+              version="6"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6">
+              <properties>
+                <property
+                  name="SqlCommand"
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                  expressionType="Notify">select * from [dbo].[DimGeographie]</property>
+                <property
+                  name="SqlCommandParam"
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                  expressionType="Notify">select * from (select * from [dbo].[DimGeographie]) [refTable]
+where [refTable].[CodePostal] = ?</property>
+                <property
+                  name="ConnectionType"
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  name="CacheType"
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  typeConverter="CacheType">0</property>
+                <property
+                  name="NoMatchBehavior"
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  name="NoMatchCachePercentage"
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset.">0</property>
+                <property
+                  name="MaxMemoryUsage"
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform.">25</property>
+                <property
+                  name="MaxMemoryUsage64"
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform.">25</property>
+                <property
+                  name="ReferenceMetadataXml"
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format.">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Geographie_PK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PaysCode" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Pays" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DepartmentCode" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Department" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="CodePostal" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Ville" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  name="ParameterMap"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  containsID="true">#{Package\flux_client\Data Conversion.Outputs[Data Conversion Output].Columns[CodePostalConverted]};</property>
+                <property
+                  name="DefaultCodePage"
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source.">1252</property>
+                <property
+                  name="TreatDuplicateKeysAsError"
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used.">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\flux_client\recherche_id_geo.Connections[OleDbConnection]"
+                  name="OleDbConnection"
+                  description="Connection manager used to access lookup data."
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-FOOVI2J.DW_VENTES1]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-FOOVI2J.DW_VENTES1]" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\flux_client\recherche_id_geo.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\flux_client\recherche_id_geo.Inputs[Lookup Input].Columns[CodePostalConverted]"
+                      lineageId="Package\flux_client\Data Conversion.Outputs[Data Conversion Output].Columns[CodePostalConverted]"
+                      cachedName="CodePostalConverted"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedCodepage="1252">
+                      <properties>
+                        <property
+                          name="JoinToReferenceColumn"
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins.">CodePostal</property>
+                        <property
+                          name="CopyFromReferenceColumn"
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied." />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\flux_client\recherche_id_geo.Outputs[Lookup Match Output]"
+                  name="Lookup Match Output"
+                  exclusionGroup="1"
+                  synchronousInputId="Package\flux_client\recherche_id_geo.Inputs[Lookup Input]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\flux_client\recherche_id_geo.Outputs[Lookup Match Output].Columns[Geographie_PK_Ref]"
+                      name="Geographie_PK_Ref"
+                      lineageId="Package\flux_client\recherche_id_geo.Outputs[Lookup Match Output].Columns[Geographie_PK_Ref]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          name="CopyFromReferenceColumn"
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied.">Geographie_PK</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\flux_client\recherche_id_geo.Outputs[Lookup No Match Output]"
+                  name="Lookup No Match Output"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  synchronousInputId="Package\flux_client\recherche_id_geo.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\flux_client\recherche_id_geo.Outputs[Lookup Error Output]"
+                  name="Lookup Error Output"
+                  exclusionGroup="1"
+                  synchronousInputId="Package\flux_client\recherche_id_geo.Inputs[Lookup Input]"
+                  isErrorOut="true">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\flux_client\recherche_id_geo.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      lineageId="Package\flux_client\recherche_id_geo.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\flux_client\recherche_id_geo.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      lineageId="Package\flux_client\recherche_id_geo.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\flux_client.Paths[ADO NET Source Output]"
+              name="ADO NET Source Output"
+              startId="Package\flux_client\client_sa.Outputs[ADO NET Source Output]"
+              endId="Package\flux_client\Data Conversion.Inputs[Data Conversion Input]" />
+            <path
+              refId="Package\flux_client.Paths[Data Conversion Output]"
+              name="Data Conversion Output"
+              startId="Package\flux_client\Data Conversion.Outputs[Data Conversion Output]"
+              endId="Package\flux_client\recherche_id_geo.Inputs[Lookup Input]" />
+            <path
+              refId="Package\flux_client.Paths[Lookup Match Output]"
+              name="Lookup Match Output"
+              startId="Package\flux_client\recherche_id_geo.Outputs[Lookup Match Output]"
+              endId="Package\flux_client\recherche_existant.Inputs[Lookup Input]" />
+            <path
+              refId="Package\flux_client.Paths[Lookup No Match Output]"
+              name="Lookup No Match Output"
+              startId="Package\flux_client\recherche_existant.Outputs[Lookup No Match Output]"
+              endId="Package\flux_client\dim_client.Inputs[ADO NET Destination Input]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="126,42"
+          Id="Package\flux_client"
+          TopLeft="100,130" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\flux_client">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="162,42"
+          Id="Package\flux_client\recherche_id_geo"
+          TopLeft="290,133" />
+        <NodeLayout
+          Size="193,42"
+          Id="Package\flux_client\dim_client"
+          TopLeft="614,52" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\flux_client\Data Conversion"
+          TopLeft="291,49" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\flux_client\client_sa"
+          TopLeft="74,50" />
+        <EdgeLayout
+          Id="Package\flux_client.Paths[Data Conversion Output]"
+          TopLeft="369.75,91">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\flux_client.Paths[ADO NET Source Output]"
+          TopLeft="240,70.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="51,0"
+              Start="0,0"
+              End="43.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="43.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="167,42"
+          Id="Package\flux_client\recherche_existant"
+          TopLeft="458,244" />
+        <EdgeLayout
+          Id="Package\flux_client.Paths[Lookup Match Output]"
+          TopLeft="371,175">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="170.5,69"
+              Start="0,0"
+              End="170.5,61.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.5"
+                    Point2="0,34.5"
+                    Point3="4,34.5" />
+                  <mssgle:LineSegment
+                    End="166.5,34.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="166.5,34.5"
+                    Point2="170.5,34.5"
+                    Point3="170.5,38.5" />
+                  <mssgle:LineSegment
+                    End="170.5,61.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="37.05861328125,39.5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\flux_client.Paths[Lookup No Match Output]"
+          TopLeft="568,244">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="142.5,-150"
+              Start="0,0"
+              End="142.5,-142.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-56.8540925266904" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-56.8540925266904"
+                    Point2="0,-60.8540925266904"
+                    Point3="4,-60.8540925266904" />
+                  <mssgle:LineSegment
+                    End="138.5,-60.8540925266904" />
+                  <mssgle:CubicBezierSegment
+                    Point1="138.5,-60.8540925266904"
+                    Point2="142.5,-60.8540925266904"
+                    Point3="142.5,-64.8540925266904" />
+                  <mssgle:LineSegment
+                    End="142.5,-142.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="15.44361328125,-55.8540925266904,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\flux_client\recherche_existant">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimClient]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
