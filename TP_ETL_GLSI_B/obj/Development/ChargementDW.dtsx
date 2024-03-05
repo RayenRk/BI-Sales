@@ -6,8 +6,8 @@
   DTS:CreatorComputerName="DESKTOP-FOOVI2J"
   DTS:CreationDate="2/20/2024 10:25:43 AM"
   DTS:PackageType="5"
-  DTS:VersionBuild="23"
-  DTS:VersionGUID="{62274B92-EA7F-4ECD-BFCE-270F3479228F}"
+  DTS:VersionBuild="25"
+  DTS:VersionGUID="{A8999F58-8613-4758-B2D3-C0B7AC6D5832}"
   DTS:LastModifiedProductVersion="11.0.2100.60"
   DTS:LocaleID="1036"
   DTS:ObjectName="ChargementDW"
@@ -4003,14 +4003,14 @@ where [refTable].[ClientCode] = ?</property>
                   <inputColumns>
                     <inputColumn
                       refId="Package\flux_produit_v2\DimProduit.Inputs[ADO NET Destination Input].Columns[Nom]"
-                      lineageId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Output].Columns[Nom]"
+                      lineageId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Output].Columns[Nom]"
                       externalMetadataColumnId="Package\flux_produit_v2\DimProduit.Inputs[ADO NET Destination Input].ExternalColumns[Produit]"
                       cachedName="Nom"
                       cachedDataType="wstr"
                       cachedLength="50" />
                     <inputColumn
                       refId="Package\flux_produit_v2\DimProduit.Inputs[ADO NET Destination Input].Columns[Code]"
-                      lineageId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Output].Columns[Code]"
+                      lineageId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Output].Columns[Code]"
                       externalMetadataColumnId="Package\flux_produit_v2\DimProduit.Inputs[ADO NET Destination Input].ExternalColumns[ProduitCode]"
                       cachedName="Code"
                       cachedDataType="wstr"
@@ -4113,8 +4113,8 @@ where [refTable].[ClientCode] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\flux_produit_v2\facture_sa"
-              name="facture_sa"
+              refId="Package\flux_produit_v2\produit_sa"
+              name="produit_sa"
               componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
               description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
               usesDispositions="true"
@@ -4152,7 +4152,7 @@ where [refTable].[ClientCode] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\flux_produit_v2\facture_sa.Connections[IDbConnection]"
+                  refId="Package\flux_produit_v2\produit_sa.Connections[IDbConnection]"
                   name="IDbConnection"
                   description="Managed connection manager"
                   connectionManagerID="Package.ConnectionManagers[DESKTOP-FOOVI2J.ProjetVente_SA]"
@@ -4160,236 +4160,236 @@ where [refTable].[ClientCode] = ?</property>
               </connections>
               <outputs>
                 <output
-                  refId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Output]"
+                  refId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Output]"
                   name="ADO NET Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Output].Columns[Produit_ID]"
+                      refId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Output].Columns[Produit_ID]"
                       name="Produit_ID"
-                      lineageId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Output].Columns[Produit_ID]"
+                      lineageId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Output].Columns[Produit_ID]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[Produit_ID]" />
+                      externalMetadataColumnId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Output].ExternalColumns[Produit_ID]" />
                     <outputColumn
-                      refId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Output].Columns[Nom]"
+                      refId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Output].Columns[Nom]"
                       name="Nom"
-                      lineageId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Output].Columns[Nom]"
+                      lineageId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Output].Columns[Nom]"
                       length="50"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[Nom]" />
+                      externalMetadataColumnId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Output].ExternalColumns[Nom]" />
                     <outputColumn
-                      refId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Output].Columns[Code]"
+                      refId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Output].Columns[Code]"
                       name="Code"
-                      lineageId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Output].Columns[Code]"
+                      lineageId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Output].Columns[Code]"
                       length="10"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[Code]" />
+                      externalMetadataColumnId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Output].ExternalColumns[Code]" />
                     <outputColumn
-                      refId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Output].Columns[SousFamille_ID]"
+                      refId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Output].Columns[SousFamille_ID]"
                       name="SousFamille_ID"
-                      lineageId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Output].Columns[SousFamille_ID]"
+                      lineageId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Output].Columns[SousFamille_ID]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[SousFamille_ID]" />
+                      externalMetadataColumnId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Output].ExternalColumns[SousFamille_ID]" />
                     <outputColumn
-                      refId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Output].Columns[Description]"
+                      refId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Output].Columns[Description]"
                       name="Description"
-                      lineageId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Output].Columns[Description]"
+                      lineageId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Output].Columns[Description]"
                       length="50"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[Description]" />
+                      externalMetadataColumnId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Output].ExternalColumns[Description]" />
                     <outputColumn
-                      refId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Output].Columns[Couleur]"
+                      refId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Output].Columns[Couleur]"
                       name="Couleur"
-                      lineageId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Output].Columns[Couleur]"
+                      lineageId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Output].Columns[Couleur]"
                       length="50"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[Couleur]" />
+                      externalMetadataColumnId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Output].ExternalColumns[Couleur]" />
                     <outputColumn
-                      refId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Output].Columns[Poids]"
+                      refId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Output].Columns[Poids]"
                       name="Poids"
-                      lineageId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Output].Columns[Poids]"
+                      lineageId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Output].Columns[Poids]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[Poids]" />
+                      externalMetadataColumnId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Output].ExternalColumns[Poids]" />
                     <outputColumn
-                      refId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Output].Columns[CoutPMP]"
+                      refId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Output].Columns[CoutPMP]"
                       name="CoutPMP"
-                      lineageId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Output].Columns[CoutPMP]"
+                      lineageId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Output].Columns[CoutPMP]"
                       precision="9"
                       scale="2"
                       dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[CoutPMP]" />
+                      externalMetadataColumnId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Output].ExternalColumns[CoutPMP]" />
                     <outputColumn
-                      refId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Output].Columns[DernierPrixAchat]"
+                      refId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Output].Columns[DernierPrixAchat]"
                       name="DernierPrixAchat"
-                      lineageId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Output].Columns[DernierPrixAchat]"
+                      lineageId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Output].Columns[DernierPrixAchat]"
                       precision="9"
                       scale="2"
                       dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[DernierPrixAchat]" />
+                      externalMetadataColumnId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Output].ExternalColumns[DernierPrixAchat]" />
                     <outputColumn
-                      refId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Output].Columns[FournisseurCode]"
+                      refId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Output].Columns[FournisseurCode]"
                       name="FournisseurCode"
-                      lineageId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Output].Columns[FournisseurCode]"
+                      lineageId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Output].Columns[FournisseurCode]"
                       length="10"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[FournisseurCode]" />
+                      externalMetadataColumnId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Output].ExternalColumns[FournisseurCode]" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[Produit_ID]"
+                      refId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Output].ExternalColumns[Produit_ID]"
                       name="Produit_ID"
                       dataType="i4" />
                     <externalMetadataColumn
-                      refId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[Nom]"
+                      refId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Output].ExternalColumns[Nom]"
                       name="Nom"
                       dataType="wstr"
                       length="50" />
                     <externalMetadataColumn
-                      refId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[Code]"
+                      refId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Output].ExternalColumns[Code]"
                       name="Code"
                       dataType="wstr"
                       length="10" />
                     <externalMetadataColumn
-                      refId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[SousFamille_ID]"
+                      refId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Output].ExternalColumns[SousFamille_ID]"
                       name="SousFamille_ID"
                       dataType="i4" />
                     <externalMetadataColumn
-                      refId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[Description]"
+                      refId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Output].ExternalColumns[Description]"
                       name="Description"
                       dataType="wstr"
                       length="50" />
                     <externalMetadataColumn
-                      refId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[Couleur]"
+                      refId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Output].ExternalColumns[Couleur]"
                       name="Couleur"
                       dataType="wstr"
                       length="50" />
                     <externalMetadataColumn
-                      refId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[Poids]"
+                      refId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Output].ExternalColumns[Poids]"
                       name="Poids"
                       dataType="i4" />
                     <externalMetadataColumn
-                      refId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[CoutPMP]"
+                      refId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Output].ExternalColumns[CoutPMP]"
                       name="CoutPMP"
                       dataType="numeric"
                       precision="9"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[DernierPrixAchat]"
+                      refId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Output].ExternalColumns[DernierPrixAchat]"
                       name="DernierPrixAchat"
                       dataType="numeric"
                       precision="9"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Output].ExternalColumns[FournisseurCode]"
+                      refId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Output].ExternalColumns[FournisseurCode]"
                       name="FournisseurCode"
                       dataType="wstr"
                       length="10" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Error Output]"
+                  refId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Error Output]"
                   name="ADO NET Source Error Output"
                   isErrorOut="true">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Error Output].Columns[Produit_ID]"
+                      refId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Error Output].Columns[Produit_ID]"
                       name="Produit_ID"
-                      lineageId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Error Output].Columns[Produit_ID]"
+                      lineageId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Error Output].Columns[Produit_ID]"
                       dataType="i4" />
                     <outputColumn
-                      refId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Error Output].Columns[Nom]"
+                      refId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Error Output].Columns[Nom]"
                       name="Nom"
-                      lineageId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Error Output].Columns[Nom]"
+                      lineageId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Error Output].Columns[Nom]"
                       length="50"
                       dataType="wstr" />
                     <outputColumn
-                      refId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Error Output].Columns[Code]"
+                      refId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Error Output].Columns[Code]"
                       name="Code"
-                      lineageId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Error Output].Columns[Code]"
+                      lineageId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Error Output].Columns[Code]"
                       length="10"
                       dataType="wstr" />
                     <outputColumn
-                      refId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Error Output].Columns[SousFamille_ID]"
+                      refId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Error Output].Columns[SousFamille_ID]"
                       name="SousFamille_ID"
-                      lineageId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Error Output].Columns[SousFamille_ID]"
+                      lineageId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Error Output].Columns[SousFamille_ID]"
                       dataType="i4" />
                     <outputColumn
-                      refId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Error Output].Columns[Description]"
+                      refId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Error Output].Columns[Description]"
                       name="Description"
-                      lineageId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Error Output].Columns[Description]"
+                      lineageId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Error Output].Columns[Description]"
                       length="50"
                       dataType="wstr" />
                     <outputColumn
-                      refId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Error Output].Columns[Couleur]"
+                      refId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Error Output].Columns[Couleur]"
                       name="Couleur"
-                      lineageId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Error Output].Columns[Couleur]"
+                      lineageId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Error Output].Columns[Couleur]"
                       length="50"
                       dataType="wstr" />
                     <outputColumn
-                      refId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Error Output].Columns[Poids]"
+                      refId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Error Output].Columns[Poids]"
                       name="Poids"
-                      lineageId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Error Output].Columns[Poids]"
+                      lineageId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Error Output].Columns[Poids]"
                       dataType="i4" />
                     <outputColumn
-                      refId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Error Output].Columns[CoutPMP]"
+                      refId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Error Output].Columns[CoutPMP]"
                       name="CoutPMP"
-                      lineageId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Error Output].Columns[CoutPMP]"
+                      lineageId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Error Output].Columns[CoutPMP]"
                       precision="9"
                       scale="2"
                       dataType="numeric" />
                     <outputColumn
-                      refId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Error Output].Columns[DernierPrixAchat]"
+                      refId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Error Output].Columns[DernierPrixAchat]"
                       name="DernierPrixAchat"
-                      lineageId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Error Output].Columns[DernierPrixAchat]"
+                      lineageId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Error Output].Columns[DernierPrixAchat]"
                       precision="9"
                       scale="2"
                       dataType="numeric" />
                     <outputColumn
-                      refId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Error Output].Columns[FournisseurCode]"
+                      refId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Error Output].Columns[FournisseurCode]"
                       name="FournisseurCode"
-                      lineageId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Error Output].Columns[FournisseurCode]"
+                      lineageId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Error Output].Columns[FournisseurCode]"
                       length="10"
                       dataType="wstr" />
                     <outputColumn
-                      refId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      refId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
-                      lineageId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
-                      lineageId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       specialFlags="2" />
                   </outputColumns>
@@ -4630,7 +4630,7 @@ where [refTable].[SousFamille_ID] = ?</property>
                   name="ParameterMap"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  containsID="true">#{Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Output].Columns[SousFamille_ID]};</property>
+                  containsID="true">#{Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Output].Columns[SousFamille_ID]};</property>
                 <property
                   name="DefaultCodePage"
                   dataType="System.Int32"
@@ -4655,7 +4655,7 @@ where [refTable].[SousFamille_ID] = ?</property>
                   <inputColumns>
                     <inputColumn
                       refId="Package\flux_produit_v2\recherche_sf.Inputs[Lookup Input].Columns[SousFamille_ID]"
-                      lineageId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Output].Columns[SousFamille_ID]"
+                      lineageId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Output].Columns[SousFamille_ID]"
                       cachedName="SousFamille_ID"
                       cachedDataType="i4">
                       <properties>
@@ -4768,7 +4768,7 @@ where [refTable].[SousFamille_ID] = ?</property>
             <path
               refId="Package\flux_produit_v2.Paths[ADO NET Source Output]"
               name="ADO NET Source Output"
-              startId="Package\flux_produit_v2\facture_sa.Outputs[ADO NET Source Output]"
+              startId="Package\flux_produit_v2\produit_sa.Outputs[ADO NET Source Output]"
               endId="Package\flux_produit_v2\recherche_sf.Inputs[Lookup Input]" />
             <path
               refId="Package\flux_produit_v2.Paths[Lookup Match Output1]"
@@ -6064,7 +6064,7 @@ where [refTable].[CodePostal] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="47.8919466145833,-17.2989807474519,96.3827734375,11.609375"
+              BoundingBox="47.8919466145835,-17.2989807474519,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -6124,7 +6124,7 @@ where [refTable].[CodePostal] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="55.9752799479167,34.2148859543818,96.3827734375,11.609375"
+              BoundingBox="55.9752799479165,34.2148859543818,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -6543,9 +6543,9 @@ where [refTable].[CodePostal] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="157,42"
-          Id="Package\flux_produit_v2\facture_sa"
-          TopLeft="20,31" />
+          Size="128,42"
+          Id="Package\flux_produit_v2\produit_sa"
+          TopLeft="27,30" />
         <NodeLayout
           Size="159,42"
           Id="Package\flux_produit_v2\recherche_sf"
@@ -6584,18 +6584,18 @@ where [refTable].[CodePostal] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\flux_produit_v2.Paths[ADO NET Source Output]"
-          TopLeft="98,73">
+          TopLeft="94.25,72">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,24"
+              EndConnector="0,25"
               Start="0,0"
-              End="0,16.5">
+              End="0,17.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.5" />
+                    End="0,17.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6632,7 +6632,7 @@ where [refTable].[CodePostal] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\flux_produit_v2\facture_sa">
+    design-time-name="Package\flux_produit_v2\produit_sa">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
